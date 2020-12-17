@@ -3,7 +3,6 @@ import { Live } from './../../shared/models/live.model';
 import { Component, OnInit } from '@angular/core';
 import { EMPTY, Observable } from 'rxjs';
 
-
 @Component({
   selector: 'app-list-live',
   templateUrl: './list-live.component.html',
@@ -25,9 +24,9 @@ export class ListLiveComponent implements OnInit {
   getLives(): void {
     // this.liveService.getLivesWithFlag('previous').subscribe(data => {
     //let livesPrevious: Live[]
-    this.liveService.getLivesWithFlag().subscribe(data => {
-      this.livesPrevious = data;
-      console.log(data);
+    this.liveService.getLivesWithFlag().subscribe(dados => {
+      this.livesPrevious = dados;
+      console.log(dados);
     });
   }
 
