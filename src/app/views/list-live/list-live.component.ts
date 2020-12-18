@@ -1,7 +1,6 @@
 import { LiveService } from './../../shared/service/live.service';
 import { Live } from './../../shared/models/live.model';
 import { Component, OnInit } from '@angular/core';
-import { EMPTY, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-list-live',
@@ -13,7 +12,7 @@ export class ListLiveComponent implements OnInit {
   livesPrevious: any | Live[]
   //livesPrevious: Live[]
 
-  constructor(public liveService: LiveService) {
+  constructor(private liveService: LiveService) {
 
    }
 

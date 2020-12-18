@@ -6,6 +6,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ListLiveComponent } from './views/list-live/list-live.component';
+import { ListLiveDemoComponent } from './views/list-live-demo/list-live-demo.component';
+
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
@@ -13,7 +15,9 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
-
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { LocalDateTimePipe } from './shared/pipe/local-date-time.pipe';
+import { MatChipsModule } from '@angular/material/chips';
 
 
 
@@ -22,7 +26,9 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     AppComponent,
     HomeComponent,
-    ListLiveComponent
+    ListLiveComponent,
+    ListLiveDemoComponent,
+    LocalDateTimePipe
   ],
   imports: [
     BrowserModule,
@@ -33,9 +39,13 @@ import { HttpClientModule } from '@angular/common/http';
     MatTabsModule,
     MatButtonModule,
     MatCardModule,
-    HttpClientModule
+    HttpClientModule,
+    FlexLayoutModule,
+    MatChipsModule
   ],
-  providers: [],
+  providers: [
+    LocalDateTimePipe
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
