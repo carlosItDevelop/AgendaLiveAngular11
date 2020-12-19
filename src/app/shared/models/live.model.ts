@@ -3,6 +3,7 @@ export interface Live{
   id: string;
   liveName: string;
   channelName: string;
+  liveTime: string;
   liveDate: string;
   liveLink: string;
   registrationDate: string;

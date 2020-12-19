@@ -23,6 +23,7 @@ import { LiveFormDialogComponent } from './views/home/live-form-dialog/live-form
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 
 
@@ -52,7 +53,8 @@ import { MatInputModule } from '@angular/material/input';
     MatNativeDateModule,
     FormsModule,
     ReactiveFormsModule,
-    MatInputModule
+    MatInputModule,
+    MatFormFieldModule
   ],
   providers: [
     LocalDateTimePipe
