@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
@@ -8,9 +9,21 @@ import { MatDialogRef } from '@angular/material/dialog';
 })
 export class LiveFormDialogComponent implements OnInit {
 
-  constructor(public dialogRef: MatDialogRef<LiveFormDialogComponent>) { }
+  public liveForm: FormGroup | any;
+
+  constructor(
+    public dialogRef: MatDialogRef<LiveFormDialogComponent>,
+        private fb: FormBuilder
+    ) { }
 
   ngOnInit(): void {
+    this.liveForm = this.fb.group({
+        liveName: ['', Validators.required],
+        channelName: ['', Validators.required],
+        liveLink: ['', Validators.required],
+        liveDate: ['', Validators.required],
+        liveTime: ['', Validators.required]
+    });
   }
 
   cancel(): void{

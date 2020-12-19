@@ -20,6 +20,9 @@ import { LocalDateTimePipe } from './shared/pipe/local-date-time.pipe';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatDialogModule } from '@angular/material/dialog';
 import { LiveFormDialogComponent } from './views/home/live-form-dialog/live-form-dialog.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatInputModule } from '@angular/material/input';
 
 
 
@@ -45,7 +48,11 @@ import { LiveFormDialogComponent } from './views/home/live-form-dialog/live-form
     HttpClientModule,
     FlexLayoutModule,
     MatChipsModule,
-    MatDialogModule
+    MatDialogModule,
+    MatNativeDateModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatInputModule
   ],
   providers: [
     LocalDateTimePipe
