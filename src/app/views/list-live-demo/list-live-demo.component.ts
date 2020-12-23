@@ -12,6 +12,7 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 export class ListLiveDemoComponent implements OnInit {
 
   livesPrevious: any | Live[]
+  previous: boolean = false;
 
   constructor(private liveService: LiveService, private sanitizer: DomSanitizer) {}
 
@@ -27,6 +28,9 @@ export class ListLiveDemoComponent implements OnInit {
       this.livesPrevious.forEach((live: { urlSafe: SafeResourceUrl; liveLink: string;}) => {
         live.urlSafe = this.sanitizer.bypassSecurityTrustResourceUrl(live.liveLink);
       });
+
+      this.previous = true;
+
     });
   }
 }

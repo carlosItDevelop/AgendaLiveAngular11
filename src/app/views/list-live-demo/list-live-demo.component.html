@@ -5,7 +5,8 @@
             <mat-icon>call_missed_outgoing</mat-icon>
             <span style="margin-left: 10px;">INICIAR</span>
         </ng-template>
-        <div fxLayout="row wrap" fxLayoutAlign="start start" style="padding: 2%;">
+        <mat-progress-bar *ngIf="!previous" mode="indeterminate"></mat-progress-bar>
+        <div *ngIf="previous" fxLayout="row wrap" fxLayoutAlign="start start" style="padding: 2%;">
             <ng-container *ngFor="let live of livesPrevious" style="margin: 0.5%;">
 
 
