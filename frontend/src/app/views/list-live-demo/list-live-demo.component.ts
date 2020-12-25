@@ -22,7 +22,7 @@ export class ListLiveDemoComponent implements OnInit {
 
   getLives(): void {
     // this.liveService.getLivesWithFlag('previous').subscribe(data => {
-    this.liveService.getLivesWithFlag().subscribe(dados => {
+    this.liveService.getLivesWithFlag('1','5').subscribe(dados => {
       this.livesPrevious = dados;
 
       this.livesPrevious.forEach((live: { urlSafe: SafeResourceUrl; liveLink: string;}) => {

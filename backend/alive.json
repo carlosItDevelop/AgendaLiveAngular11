@@ -1,148 +1,155 @@
 {
-  "lives": [
-    {
-      "id": "1",
-      "liveName": "Curso Angular 9 #09 Obtendo dados da API externa (back-end)",
-      "channelName": "Michelli Brito",
-      "liveDate": "2020-06-01T19:20:00",
-      "liveLink": "https://www.youtube.com/embed/yRnhU6_RUlc",
-      "registrationDate": "2020-05-28T19:21:10"
-    },
-    {
-      "id": "2",
-      "liveName": "Introdução ao MongoDB - MongoDB",
-      "channelName": "Fábrica de Código",
-      "liveDate": "2020-11-11T17:20:00",
-      "liveLink": "https://www.youtube.com/embed/YbyhVxffZfQ",
-      "registrationDate": "2020-11-10T17:20:10"
-    },
-    {
-      "id": "3",
-      "liveName": "Domain Driven Design nos dias atuais",
-      "channelName": "balta.io",
-      "liveDate": "2020-09-29T19:20:00",
-      "liveLink": "https://www.youtube.com/embed/lQCKJvpNCoQ",
-      "registrationDate": "2020-09-15T19:21:10"
-    },
-    {
-      "id": "4",
-      "liveName": "DDD, Domain-Driven Design c/Elemar Jr. Live #52",
-      "channelName": "Rodrigo Branas",
-      "liveDate": "2020-06-01T19:20:00",
-      "liveLink": "https://www.youtube.com/embed/-LF_TOnaH4Y",
-      "registrationDate": "2020-05-28T19:21:10"
-    },
-    {
-      "id": "5",
-      "liveName": "Curso Angular #103: Formulários reativos: Combobox com Objeto (ngValue e compareWith)",
-      "channelName": "Loiane Groner",
-      "liveDate": "2018-07-06T19:20:00",
-      "liveLink": "https://www.youtube.com/embed/eeElkzR2gd4",
-      "registrationDate": "2020-07-04T19:21:10"
-    },
-    {
-      "id": "6",
-      "liveName": "O Estado Atual do Angular ft. Loiane Groner | Contrib #02",
-      "channelName": "Rocketseat",
-      "liveDate": "2020-05-19T19:20:00",
-      "liveLink": "https://www.youtube.com/embed/rTG5V0f8vnY",
-      "registrationDate": "2020-05-13T19:21:10"
-    },
-    {
-      "id": "7",
-      "liveName": "TypeScript - O que é e quais os seus benefícios? | Diego Fernandes",
-      "channelName": "Rocketseat",
-      "liveDate": "2019-07-16T19:20:00",
-      "liveLink": "https://www.youtube.com/embed/kg2-SMolAV0",
-      "registrationDate": "2019-07-12T19:21:10"
-    },
-    {
-      "id": "8",
-      "liveName": "TypeScript // Dicionário do Programador",
-      "channelName": "Código Fonte TV",
-      "liveDate": "2019-03-18T19:20:00",
-      "liveLink": "https://www.youtube.com/embed/gmupEp468lY",
-      "registrationDate": "2019-03-16T19:21:10"
-    },
-    {
-      "id": "9",
-      "liveName": "TypeScript vs JavaScript! Qual aplicar no seu Projeto?",
-      "channelName": "Cod3r Cursos",
-      "liveDate": "2020-07-14T19:20:00",
-      "liveLink": "https://www.youtube.com/embed/AIVWz9tDIxM",
-      "registrationDate": "2020-07-13T19:21:10"
-    },
-    {
-      "id": "10",
-      "liveName": "TDD e BDD na prática - Hipsters.Talks #21",
-      "channelName": "Alura Cursos Online",
-      "liveDate": "2020-09-16T19:20:00",
-      "liveLink": "https://www.youtube.com/embed/bskmKfKzRw8",
-      "registrationDate": "2020-09-15T19:21:10"
-    },
-    {
-      "id": "11",
-      "liveName": "Novidades .NET Conf 2020: .NET 5, ASP.NET 5, Xamarin, Azure",
-      "channelName": "Coding Night",
-      "liveDate": "2020-11-16T19:20:00",
-      "liveLink": "https://www.youtube.com/embed/VZJo6S_xFoY",
-      "registrationDate": "2020-11-15T19:21:10"
-    },
-    {
-      "id": "12",
-      "liveName": "Design Patterns: Implementando o Padrão Unit of Work",
-      "channelName": "Canal dotNET",
-      "liveDate": "2020-11-03T19:20:00",
-      "liveLink": "https://www.youtube.com/embed/DZZSmllmydc",
-      "registrationDate": "2020-11-01T19:21:10"
-    },
-    {
-      "liveName": "RESTFul API with .NET Core 3.1 - Part 1 - Summary",
-      "channelName": "Code Skills",
-      "liveLink": "https://www.youtube.com/embed/9kYGe5OzrV4",
-      "liveDate": "2020-08-19T12:32",
-      "liveTime": "12:32",
-      "id": "13"
-    },
-    {
-      "liveName": "REST, GraphQL, Clean Architecture e TypeScript com Rodrigo Manguinho // Live #69",
-      "channelName": "Rodrigo Branas",
-      "liveLink": "https://www.youtube.com/embed/P0gpCCA8ZPs",
-      "liveDate": "2020-12-16T20:00",
-      "liveTime": "20:00",
-      "id": "14"
-    },
-    {
-      "liveName": "Aula #1: Apresentação - Curso Desenvolvimento de APIs com ASP.NET Core",
-      "channelName": " luis_dev",
-      "liveLink": "https://www.youtube.com/embed/Rz_Xp62YJ2M",
-      "liveDate": "2020-08-01T19:37",
-      "liveTime": "19:37",
-      "id": "15"
-    },
-    {
-      "liveName": "Lazy Loading (CDU-Projetoatual)",
-      "channelName": "Michelli Brito",
-      "liveLink": "https://www.youtube.com/embed/faYv4aIGoAE",
-      "liveDate": "2020-12-19T21:50",
-      "liveTime": "21:50",
-      "id": "16"
-    },
-    {
-      "liveName": "Learn Angular 10, .NET Core Web API & SQL Server by Creating a Web Application from Scratch",
-      "channelName": "Art of Engineer",
-      "liveLink": "https://www.youtube.com/embed/Dpv6lUKNL9o",
-      "liveDate": "2020-12-19T23:42",
-      "liveTime": "23:42",
-      "id": "A9eIfBt"
-    },
-    {
-      "liveName": "Asp.Net Core Web API and Angular 7 CRUD",
-      "channelName": "CodAffection",
-      "liveLink": "https://www.youtube.com/embed/fom80TujpYQ",
-      "liveDate": "2020-12-19T20:53",
-      "liveTime": "20:53",
-      "id": "IgrZyCV"
-    }
-  ]
+    "lives": [{
+            "id": "1",
+            "liveName": "Curso Angular 9 #09 Obtendo dados da API externa (back-end)",
+            "channelName": "Michelli Brito",
+            "liveDate": "2020-06-01T19:20:00",
+            "liveLink": "https://www.youtube.com/embed/yRnhU6_RUlc",
+            "registrationDate": "2020-05-28T19:21:10"
+        },
+        {
+            "id": "2",
+            "liveName": "Introdução ao MongoDB - MongoDB",
+            "channelName": "Fábrica de Código",
+            "liveDate": "2020-11-11T17:20:00",
+            "liveLink": "https://www.youtube.com/embed/YbyhVxffZfQ",
+            "registrationDate": "2020-11-10T17:20:10"
+        },
+        {
+            "id": "3",
+            "liveName": "Domain Driven Design nos dias atuais",
+            "channelName": "balta.io",
+            "liveDate": "2020-09-29T19:20:00",
+            "liveLink": "https://www.youtube.com/embed/lQCKJvpNCoQ",
+            "registrationDate": "2020-09-15T19:21:10"
+        },
+        {
+            "id": "4",
+            "liveName": "DDD, Domain-Driven Design c/Elemar Jr. Live #52",
+            "channelName": "Rodrigo Branas",
+            "liveDate": "2020-06-01T19:20:00",
+            "liveLink": "https://www.youtube.com/embed/-LF_TOnaH4Y",
+            "registrationDate": "2020-05-28T19:21:10"
+        },
+        {
+            "id": "5",
+            "liveName": "Curso Angular #103: Formulários reativos: Combobox com Objeto (ngValue e compareWith)",
+            "channelName": "Loiane Groner",
+            "liveDate": "2018-07-06T19:20:00",
+            "liveLink": "https://www.youtube.com/embed/eeElkzR2gd4",
+            "registrationDate": "2020-07-04T19:21:10"
+        },
+        {
+            "id": "6",
+            "liveName": "O Estado Atual do Angular ft. Loiane Groner | Contrib #02",
+            "channelName": "Rocketseat",
+            "liveDate": "2020-05-19T19:20:00",
+            "liveLink": "https://www.youtube.com/embed/rTG5V0f8vnY",
+            "registrationDate": "2020-05-13T19:21:10"
+        },
+        {
+            "id": "7",
+            "liveName": "TypeScript - O que é e quais os seus benefícios? | Diego Fernandes",
+            "channelName": "Rocketseat",
+            "liveDate": "2019-07-16T19:20:00",
+            "liveLink": "https://www.youtube.com/embed/kg2-SMolAV0",
+            "registrationDate": "2019-07-12T19:21:10"
+        },
+        {
+            "id": "8",
+            "liveName": "TypeScript // Dicionário do Programador",
+            "channelName": "Código Fonte TV",
+            "liveDate": "2019-03-18T19:20:00",
+            "liveLink": "https://www.youtube.com/embed/gmupEp468lY",
+            "registrationDate": "2019-03-16T19:21:10"
+        },
+        {
+            "id": "9",
+            "liveName": "TypeScript vs JavaScript! Qual aplicar no seu Projeto?",
+            "channelName": "Cod3r Cursos",
+            "liveDate": "2020-07-14T19:20:00",
+            "liveLink": "https://www.youtube.com/embed/AIVWz9tDIxM",
+            "registrationDate": "2020-07-13T19:21:10"
+        },
+        {
+            "id": "10",
+            "liveName": "TDD e BDD na prática - Hipsters.Talks #21",
+            "channelName": "Alura Cursos Online",
+            "liveDate": "2020-09-16T19:20:00",
+            "liveLink": "https://www.youtube.com/embed/bskmKfKzRw8",
+            "registrationDate": "2020-09-15T19:21:10"
+        },
+        {
+            "id": "11",
+            "liveName": "Novidades .NET Conf 2020: .NET 5, ASP.NET 5, Xamarin, Azure",
+            "channelName": "Coding Night",
+            "liveDate": "2020-11-16T19:20:00",
+            "liveLink": "https://www.youtube.com/embed/VZJo6S_xFoY",
+            "registrationDate": "2020-11-15T19:21:10"
+        },
+        {
+            "id": "12",
+            "liveName": "Design Patterns: Implementando o Padrão Unit of Work",
+            "channelName": "Canal dotNET",
+            "liveDate": "2020-11-03T19:20:00",
+            "liveLink": "https://www.youtube.com/embed/DZZSmllmydc",
+            "registrationDate": "2020-11-01T19:21:10"
+        },
+        {
+            "liveName": "RESTFul API with .NET Core 3.1 - Part 1 - Summary",
+            "channelName": "Code Skills",
+            "liveLink": "https://www.youtube.com/embed/9kYGe5OzrV4",
+            "liveDate": "2020-08-19T12:32",
+            "liveTime": "12:32",
+            "id": "13"
+        },
+        {
+            "liveName": "REST, GraphQL, Clean Architecture e TypeScript com Rodrigo Manguinho // Live #69",
+            "channelName": "Rodrigo Branas",
+            "liveLink": "https://www.youtube.com/embed/P0gpCCA8ZPs",
+            "liveDate": "2020-12-16T20:00",
+            "liveTime": "20:00",
+            "id": "14"
+        },
+        {
+            "liveName": "Aula #1: Apresentação - Curso Desenvolvimento de APIs com ASP.NET Core",
+            "channelName": " luis_dev",
+            "liveLink": "https://www.youtube.com/embed/Rz_Xp62YJ2M",
+            "liveDate": "2020-08-01T19:37",
+            "liveTime": "19:37",
+            "id": "15"
+        },
+        {
+            "liveName": "Lazy Loading (CDU-Projetoatual)",
+            "channelName": "Michelli Brito",
+            "liveLink": "https://www.youtube.com/embed/faYv4aIGoAE",
+            "liveDate": "2020-12-19T21:50",
+            "liveTime": "21:50",
+            "id": "16"
+        },
+        {
+            "liveName": "Learn Angular 10, .NET Core Web API & SQL Server by Creating a Web Application from Scratch",
+            "channelName": "Art of Engineer",
+            "liveLink": "https://www.youtube.com/embed/Dpv6lUKNL9o",
+            "liveDate": "2020-12-19T23:42",
+            "liveTime": "23:42",
+            "id": "17"
+        },
+        {
+            "liveName": "Asp.Net Core Web API and Angular 7 CRUD",
+            "channelName": "CodAffection",
+            "liveLink": "https://www.youtube.com/embed/fom80TujpYQ",
+            "liveDate": "2020-12-19T20:53",
+            "liveTime": "20:53",
+            "id": "18"
+        },
+        {
+            "liveName": "Curso GIT e GITHUB - O que é GIT e GitHub",
+            "channelName": "Professor José de Assis",
+            "liveLink": "https://www.youtube.com/embed/FF1f4bKYhoo",
+            "liveDate": "2019-01-21T05:47",
+            "liveTime": "05:47",
+            "id": "19"
+        }
+    ]
 }
