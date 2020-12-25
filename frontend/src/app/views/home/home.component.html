@@ -1,6 +1,6 @@
 <mat-toolbar>
     <button style="margin-right: 15px;" mat-icon-button class="example-icon" aria-label="">
-    <mat-icon (click)=menu.toggle()>menu</mat-icon>
+    <mat-icon tabindex="0" (keyup.space)="menu.toggle()" (click)="menu.toggle()">menu</mat-icon>
   </button>
     <span>
       Agenda Cooperchip - Lives
@@ -12,6 +12,10 @@
             <li>Menu Item 02</li>
             <li>Menu Item 03</li>
             <li>Menu Item 04</li>
+            <li>Menu Item 05</li>
+            <li>Menu Item 06</li>
+            <li>Menu Item 07</li>
+            <li>Menu Item 08</li>
         </ul>
     </app-menu>
 
