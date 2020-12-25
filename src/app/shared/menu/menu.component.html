@@ -1,6 +1,6 @@
 <div [ngClass]="{ 'active-menu': isShow} ">
     <div class="menu-bar">
-        <mat-icon (click)="toggle()">highlight_off</mat-icon>
+        <mat-icon class="menu-close" (click)="toggle()">highlight_off</mat-icon>
         <ng-content></ng-content>
     </div>
 </div>

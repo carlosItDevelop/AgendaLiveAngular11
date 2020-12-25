@@ -11,13 +11,14 @@
 
 
                 <mat-card class="mat-elevation-z5 mat-card-live" fxFlex="0 1 calc(33.3% - 11px;)" fxFlex.lt-md="0 1 calc(50% - 11px;)" fxFlex.lt-sm="100%;">
+                    <!-- <mat-card class="mat-elevation-z5 mat-card-live" fxFlex="0 1 calc(25% - 11px;)" fxFlex.lt-md="0 1 calc(50% - 11px;)" fxFlex.lt-sm="100%;"> -->
 
 
                     <mat-card-title class="mat-card-title-live">
                         <div class="row">
                             <p>
                                 <span style="font-size: 0.9rem;" fxFlex="70%" fxLayoutAlign="start center">
-                                  {{live.liveName.substring(0,40)}}...
+                                  {{live.liveName.substring(0,35)}}...
                                 </span>
                                 <span fxFlex></span>
                                 <mat-chip class="mat-chip-date" fxFlex="25%" fxLayoutAlign="center center">
@@ -34,9 +35,8 @@
                         <div>
 
                             <iframe width="430" height="230" [src]="live.urlSafe" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <!-- <iframe width="325" height="174" [src]="live.urlSafe" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
 
-                            <!-- <iframe width="560" height="315" [src]="live.urlSafe" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen> -->
-                            <!-- </iframe> -->
                         </div>
                     </mat-card-content>
                 </mat-card>

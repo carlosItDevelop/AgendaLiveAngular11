@@ -2,16 +2,21 @@
     position: fixed;
     height: 100%;
     width: 90;
-    max-width: 320px;
+    max-width: 420px;
     margin: 0;
     padding: 1em;
-    background-color: #f0f0f0;
-    opacity: 100%;
+    background-color: #9da;
+    opacity: 98%;
     top: 0;
     left: -90%;
     transition: left 0.3s ease-out;
+    z-index: 3;
 }
 
 .active-menu .menu-bar {
     left: 0;
+}
+
+.menu-bar .menu-close {
+    cursor: pointer;
 }
