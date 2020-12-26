@@ -20,3 +20,15 @@
     background-color: #90CAF9 !important;
     color: black !important;
 }
+
+.edit {
+    margin-right: 5px;
+}
+
+.edit>i {
+    color: cadetblue
+}
+
+.delete>i {
+    color: red;
+}

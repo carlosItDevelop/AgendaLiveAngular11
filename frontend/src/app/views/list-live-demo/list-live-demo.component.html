@@ -26,7 +26,23 @@
                                 </mat-chip>
                             </p>
                             <p style="font-size: 0.7rem;">
-                                <span>Canal: {{live.channelName}}</span>
+                                <span fxFlex="70%" fxLayoutAlign="start center">Canal: {{live.channelName}}</span>
+                                <span fxFlex></span>
+                                <span fxFlex="25%" fxLayoutAlign="end center">
+                                    
+                                  <!-- <button mat-mini-fab color="accent" aria-label="" (click)="addLive()"><mat-icon>plus_one</mat-icon></button>                                    -->
+                                  <a routerLink="/pacientes/update/" class="edit">
+                                    <i class="material-icons">
+                                        edit
+                                    </i>
+                                </a>
+                                <a routerLink="/pacientes/delete/" class="delete">
+                                    <i class="material-icons">
+                                        delete
+                                    </i>
+                                </a>                                  
+                                    
+                                </span>
                             </p>
                         </div>
                     </mat-card-title>
