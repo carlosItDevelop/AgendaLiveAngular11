@@ -1,8 +1,11 @@
+
 import { LiveService } from './../../../shared/service/live.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import * as moment from 'moment';
+import { StatusDaLive } from 'src/app/shared/models/statusdalive.model';
+import { StatusDaLiveService } from 'src/app/shared/service/status-da-live.service';
 
 @Component({
   selector: 'app-live-form-dialog',
@@ -12,11 +15,13 @@ import * as moment from 'moment';
 export class LiveFormDialogComponent implements OnInit {
 
   public liveForm: FormGroup | any;
+  public statusDaLive: StatusDaLive | any;
 
   constructor(
         public dialogRef: MatDialogRef<LiveFormDialogComponent>,
         private fb: FormBuilder,
-        private rest: LiveService
+        private rest: LiveService,
+        private statusDasLivesService: StatusDaLiveService
     ) { }
 
   ngOnInit(): void {
@@ -28,6 +33,13 @@ export class LiveFormDialogComponent implements OnInit {
         liveTime: ['', Validators.required],
         statusLive: ['', Validators.required]
     });
+
+
+    this.statusDasLivesService.obterStatusDasLives().subscribe(statusDaLive => {
+      this.statusDaLive = statusDaLive;
+      //console.log(estados);
+    })
+
   }
 
   createLive(): void{
