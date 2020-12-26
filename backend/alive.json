@@ -5,7 +5,8 @@
             "channelName": "Michelli Brito",
             "liveDate": "2020-06-01T19:20:00",
             "liveLink": "https://www.youtube.com/embed/yRnhU6_RUlc",
-            "registrationDate": "2020-05-28T19:21:10"
+            "registrationDate": "2020-05-28T19:21:10",
+            "statusLive": "assistida"
         },
         {
             "id": "2",
@@ -13,7 +14,8 @@
             "channelName": "Fábrica de Código",
             "liveDate": "2020-11-11T17:20:00",
             "liveLink": "https://www.youtube.com/embed/YbyhVxffZfQ",
-            "registrationDate": "2020-11-10T17:20:10"
+            "registrationDate": "2020-11-10T17:20:10",
+            "statusLive": "assistir"
         },
         {
             "id": "3",
@@ -21,7 +23,8 @@
             "channelName": "balta.io",
             "liveDate": "2020-09-29T19:20:00",
             "liveLink": "https://www.youtube.com/embed/lQCKJvpNCoQ",
-            "registrationDate": "2020-09-15T19:21:10"
+            "registrationDate": "2020-09-15T19:21:10",
+            "statusLive": "assistindo"
         },
         {
             "id": "4",
@@ -37,7 +40,8 @@
             "channelName": "Loiane Groner",
             "liveDate": "2018-07-06T19:20:00",
             "liveLink": "https://www.youtube.com/embed/eeElkzR2gd4",
-            "registrationDate": "2020-07-04T19:21:10"
+            "registrationDate": "2020-07-04T19:21:10",
+            "statusLive": "assistir"
         },
         {
             "id": "6",
@@ -45,7 +49,8 @@
             "channelName": "Rocketseat",
             "liveDate": "2020-05-19T19:20:00",
             "liveLink": "https://www.youtube.com/embed/rTG5V0f8vnY",
-            "registrationDate": "2020-05-13T19:21:10"
+            "registrationDate": "2020-05-13T19:21:10",
+            "statusLive": "assistir"
         },
         {
             "id": "7",
@@ -53,7 +58,8 @@
             "channelName": "Rocketseat",
             "liveDate": "2019-07-16T19:20:00",
             "liveLink": "https://www.youtube.com/embed/kg2-SMolAV0",
-            "registrationDate": "2019-07-12T19:21:10"
+            "registrationDate": "2019-07-12T19:21:10",
+            "statusLive": "assistir"
         },
         {
             "id": "8",
@@ -61,7 +67,8 @@
             "channelName": "Código Fonte TV",
             "liveDate": "2019-03-18T19:20:00",
             "liveLink": "https://www.youtube.com/embed/gmupEp468lY",
-            "registrationDate": "2019-03-16T19:21:10"
+            "registrationDate": "2019-03-16T19:21:10",
+            "statusLive": "assistida"
         },
         {
             "id": "9",
@@ -69,7 +76,8 @@
             "channelName": "Cod3r Cursos",
             "liveDate": "2020-07-14T19:20:00",
             "liveLink": "https://www.youtube.com/embed/AIVWz9tDIxM",
-            "registrationDate": "2020-07-13T19:21:10"
+            "registrationDate": "2020-07-13T19:21:10",
+            "statusLive": "assistindo"
         },
         {
             "id": "10",
@@ -77,7 +85,8 @@
             "channelName": "Alura Cursos Online",
             "liveDate": "2020-09-16T19:20:00",
             "liveLink": "https://www.youtube.com/embed/bskmKfKzRw8",
-            "registrationDate": "2020-09-15T19:21:10"
+            "registrationDate": "2020-09-15T19:21:10",
+            "statusLive": "assistir"
         },
         {
             "id": "11",
@@ -85,7 +94,8 @@
             "channelName": "Coding Night",
             "liveDate": "2020-11-16T19:20:00",
             "liveLink": "https://www.youtube.com/embed/VZJo6S_xFoY",
-            "registrationDate": "2020-11-15T19:21:10"
+            "registrationDate": "2020-11-15T19:21:10",
+            "statusLive": "assistir"
         },
         {
             "id": "12",
@@ -93,15 +103,17 @@
             "channelName": "Canal dotNET",
             "liveDate": "2020-11-03T19:20:00",
             "liveLink": "https://www.youtube.com/embed/DZZSmllmydc",
-            "registrationDate": "2020-11-01T19:21:10"
+            "registrationDate": "2020-11-01T19:21:10",
+            "statusLive": "assistir"
         },
         {
+            "id": "13",
             "liveName": "RESTFul API with .NET Core 3.1 - Part 1 - Summary",
             "channelName": "Code Skills",
             "liveLink": "https://www.youtube.com/embed/9kYGe5OzrV4",
             "liveDate": "2020-08-19T12:32",
-            "liveTime": "12:32",
-            "id": "13"
+            "registrationDate": "2020-11-01T19:21:10",
+            "statusLive": "assistir"
         },
         {
             "liveName": "REST, GraphQL, Clean Architecture e TypeScript com Rodrigo Manguinho // Live #69",
@@ -109,7 +121,8 @@
             "liveLink": "https://www.youtube.com/embed/P0gpCCA8ZPs",
             "liveDate": "2020-12-16T20:00",
             "liveTime": "20:00",
-            "id": "14"
+            "id": "14",
+            "statusLive": "assistir"
         },
         {
             "liveName": "Aula #1: Apresentação - Curso Desenvolvimento de APIs com ASP.NET Core",
@@ -117,7 +130,8 @@
             "liveLink": "https://www.youtube.com/embed/Rz_Xp62YJ2M",
             "liveDate": "2020-08-01T19:37",
             "liveTime": "19:37",
-            "id": "15"
+            "id": "15",
+            "statusLive": "assistir"
         },
         {
             "liveName": "Lazy Loading (CDU-Projetoatual)",
@@ -125,7 +139,8 @@
             "liveLink": "https://www.youtube.com/embed/faYv4aIGoAE",
             "liveDate": "2020-12-19T21:50",
             "liveTime": "21:50",
-            "id": "16"
+            "id": "16",
+            "statusLive": "assistir"
         },
         {
             "liveName": "Learn Angular 10, .NET Core Web API & SQL Server by Creating a Web Application from Scratch",
@@ -133,7 +148,8 @@
             "liveLink": "https://www.youtube.com/embed/Dpv6lUKNL9o",
             "liveDate": "2020-12-19T23:42",
             "liveTime": "23:42",
-            "id": "17"
+            "id": "17",
+            "statusLive": "assistir"
         },
         {
             "liveName": "Asp.Net Core Web API and Angular 7 CRUD",
@@ -141,7 +157,8 @@
             "liveLink": "https://www.youtube.com/embed/fom80TujpYQ",
             "liveDate": "2020-12-19T20:53",
             "liveTime": "20:53",
-            "id": "18"
+            "id": "18",
+            "statusLive": "assistindo"
         },
         {
             "liveName": "Curso GIT e GITHUB - O que é GIT e GitHub",
@@ -149,7 +166,30 @@
             "liveLink": "https://www.youtube.com/embed/FF1f4bKYhoo",
             "liveDate": "2019-01-21T05:47",
             "liveTime": "05:47",
-            "id": "19"
+            "id": "19",
+            "statusLive": "assistir"
+        },
+        {
+            "liveName": "Angular 10 Sidebar Responsive Template",
+            "channelName": "Therichpost",
+            "liveLink": "https://www.youtube.com/embed/vIP20oHr6sQ",
+            "liveDate": "2020-08-29T18:55",
+            "liveTime": "18:55",
+            "statusLiveLive": "assistindo",
+            "id": "20"
+        }
+    ],
+    "statusDaLive": [{
+            "id": "1",
+            "statusLive": "assistir"
+        },
+        {
+            "id": "2",
+            "statusLive": "assistindo"
+        },
+        {
+            "id": "3",
+            "statusLive": "assistida"
         }
     ]
 }

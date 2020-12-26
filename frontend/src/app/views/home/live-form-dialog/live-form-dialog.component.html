@@ -17,6 +17,24 @@
             <input matInput formControlName="liveLink" name="liveLink">
         </mat-form-field>
 
+        <!-- Por como Combobox -->
+        <!-- <mat-form-field class="example-full-width">
+            <mat-label>Status da Live</mat-label>
+            <input matInput formControlName="statusLive" name="statusLive">
+        </mat-form-field> -->
+
+
+        <h4>Seleciona uma opção</h4>
+        <mat-form-field appearance="fill">
+            <mat-label>Status da Live</mat-label>
+            <mat-select [(ngModel)]="liveForm.statusLive" name="statuslive" id="statuslive">
+                <mat-option *ngFor="let live of liveForm" [value]="liveForm.statusLive">
+                    {{ liveForm.statusLive }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+
         <div fxLayout="row wrap">
             <div fxFlex="40" fxFill fxLayoutAlign="start center">
 

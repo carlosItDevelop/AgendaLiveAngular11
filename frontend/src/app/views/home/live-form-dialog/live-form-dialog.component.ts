@@ -25,7 +25,8 @@ export class LiveFormDialogComponent implements OnInit {
         channelName: ['', Validators.required],
         liveLink: ['', Validators.required],
         liveDate: ['', Validators.required],
-        liveTime: ['', Validators.required]
+        liveTime: ['', Validators.required],
+        statusLive: ['', Validators.required]
     });
   }
 

@@ -26,6 +26,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { MatSelectModule } from '@angular/material/select';
+
 
 
 
@@ -58,7 +60,8 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     MatFormFieldModule,
     MatDatepickerModule,
     MatProgressBarModule,
-    MenuModule
+    MenuModule,
+    MatSelectModule
   ],
   providers: [
     LocalDateTimePipe

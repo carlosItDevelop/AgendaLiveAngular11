@@ -6,6 +6,7 @@ export interface Live{
   liveTime: string;
   liveDate: string;
   liveLink: string;
-  registrationDate: string;
+  // registrationDate: string;
   urlSafe: SafeResourceUrl;
+  statusLive: string;
 }
