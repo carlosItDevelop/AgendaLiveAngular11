@@ -11,26 +11,68 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 })
 export class ListLiveDemoComponent implements OnInit {
 
-  livesPrevious: any | Live[]
-  previous: boolean = false;
+  livesAssistir: any | Live[]
+  livesAssistida: any | Live[]
+  livesAssistindo: any | Live[]
+
+
+  assistir: boolean = false;
+  assistindo: boolean = false;
+  assistida: boolean = false;
 
   constructor(private liveService: LiveService, private sanitizer: DomSanitizer) {}
 
   ngOnInit(): void {
-    this.obterLives();
+    this.obterLivesAssistir();
+    this.obterLivesAssistindo();
+    this.obterLivesAssistida();
   }
 
-  obterLives(): void {
+  obterLivesAssistir(): void {
     // this.liveService.getLivesWithFlag('previous').subscribe(data => {
-    this.liveService.obterLivesPaginadas('assistir','1','10').subscribe(dados => {
-      this.livesPrevious = dados;
+    this.liveService.obterLivesPaginadas('assistir','1','5').subscribe(dados => {
+      this.livesAssistir = dados;
 
-      this.livesPrevious.forEach((live: { urlSafe: SafeResourceUrl; liveLink: string;}) => {
+      this.livesAssistir.forEach((live: { urlSafe: SafeResourceUrl; liveLink: string;}) => {
         live.urlSafe = this.sanitizer.bypassSecurityTrustResourceUrl(live.liveLink);
       });
 
-      this.previous = true;
+      this.assistir = true;
 
     });
   }
+
+
+  obterLivesAssistindo(): void {
+    // this.liveService.getLivesWithFlag('previous').subscribe(data => {
+    this.liveService.obterLivesPaginadas('assistindo','1','5').subscribe(dados => {
+      this.livesAssistindo = dados;
+
+      this.livesAssistindo.forEach((live: { urlSafe: SafeResourceUrl; liveLink: string;}) => {
+        live.urlSafe = this.sanitizer.bypassSecurityTrustResourceUrl(live.liveLink);
+      });
+
+      this.assistindo = true;
+
+    });
+  }
+
+
+
+  obterLivesAssistida(): void {
+    // this.liveService.getLivesWithFlag('previous').subscribe(data => {
+    this.liveService.obterLivesPaginadas('assistida','1','5').subscribe(dados => {
+      this.livesAssistida = dados;
+
+      this.livesAssistida.forEach((live: { urlSafe: SafeResourceUrl; liveLink: string;}) => {
+        live.urlSafe = this.sanitizer.bypassSecurityTrustResourceUrl(live.liveLink);
+      });
+
+      this.assistida = true;
+
+    });
+  }
+
+
+
 }

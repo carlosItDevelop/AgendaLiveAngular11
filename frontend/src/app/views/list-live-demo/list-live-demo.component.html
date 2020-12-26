@@ -5,9 +5,9 @@
             <mat-icon>pending_actions</mat-icon>
             <span style="margin-left: 10px;">INICIAR</span>
         </ng-template>
-        <mat-progress-bar *ngIf="!previous" mode="indeterminate"></mat-progress-bar>
-        <div *ngIf="previous" fxLayout="row wrap" fxLayoutAlign="start start" style="padding: 2%;">
-            <ng-container *ngFor="let live of livesPrevious" style="margin: 0.5%;">
+        <mat-progress-bar *ngIf="!assistir" mode="indeterminate"></mat-progress-bar>
+        <div *ngIf="assistir" fxLayout="row wrap" fxLayoutAlign="start start" style="padding: 2%;">
+            <ng-container *ngFor="let live of livesAssistir" style="margin: 0.5%;">
 
 
                 <mat-card class="mat-elevation-z5 mat-card-live" fxFlex="0 1 calc(33.3% - 11px;)" fxFlex.lt-md="0 1 calc(50% - 11px;)" fxFlex.lt-sm="100%;">
@@ -70,9 +70,9 @@
             <mat-icon style="margin-left: 10px;">visibility</mat-icon>
             <span style="margin-left: 10px;">ASSISTINDO</span>
         </ng-template>
-        <mat-progress-bar *ngIf="!previous" mode="indeterminate"></mat-progress-bar>
-        <div *ngIf="previous" fxLayout="row wrap" fxLayoutAlign="start start" style="padding: 2%;">
-            <ng-container *ngFor="let live of livesPrevious" style="margin: 0.5%;">
+        <mat-progress-bar *ngIf="!assistindo" mode="indeterminate"></mat-progress-bar>
+        <div *ngIf="assistindo" fxLayout="row wrap" fxLayoutAlign="start start" style="padding: 2%;">
+            <ng-container *ngFor="let live of livesAssistindo" style="margin: 0.5%;">
 
 
                 <mat-card class="mat-elevation-z5 mat-card-live" fxFlex="0 1 calc(33.3% - 11px;)" fxFlex.lt-md="0 1 calc(50% - 11px;)" fxFlex.lt-sm="100%;">
@@ -91,7 +91,23 @@
                                 </mat-chip>
                             </p>
                             <p style="font-size: 0.7rem;">
-                                <span>Canal: {{live.channelName}}</span>
+                                <span fxFlex="70%" fxLayoutAlign="start center">Canal: {{live.channelName}}</span>
+                                <span fxFlex></span>
+                                <span fxFlex="25%" fxLayoutAlign="end center">
+                                  
+                                <!-- <button mat-mini-fab color="accent" aria-label="" (click)="addLive()"><mat-icon>plus_one</mat-icon></button>                                    -->
+                                <a routerLink="/pacientes/update/" class="edit">
+                                  <i class="material-icons">
+                                      edit
+                                  </i>
+                              </a>
+                              <a routerLink="/pacientes/delete/" class="delete">
+                                  <i class="material-icons">
+                                      delete
+                                  </i>
+                              </a>                                  
+                                  
+                              </span>
                             </p>
                         </div>
                     </mat-card-title>
@@ -119,9 +135,9 @@
             <mat-icon style="margin-left: 10px;">done</mat-icon>
             <span style="margin-left: 10px;">FINALIZADAS</span>
         </ng-template>
-        <mat-progress-bar *ngIf="!previous" mode="indeterminate"></mat-progress-bar>
-        <div *ngIf="previous" fxLayout="row wrap" fxLayoutAlign="start start" style="padding: 2%;">
-            <ng-container *ngFor="let live of livesPrevious" style="margin: 0.5%;">
+        <mat-progress-bar *ngIf="!assistida" mode="indeterminate"></mat-progress-bar>
+        <div *ngIf="assistida" fxLayout="row wrap" fxLayoutAlign="start start" style="padding: 2%;">
+            <ng-container *ngFor="let live of livesAssistida" style="margin: 0.5%;">
 
 
                 <mat-card class="mat-elevation-z5 mat-card-live" fxFlex="0 1 calc(33.3% - 11px;)" fxFlex.lt-md="0 1 calc(50% - 11px;)" fxFlex.lt-sm="100%;">
@@ -140,7 +156,23 @@
                                 </mat-chip>
                             </p>
                             <p style="font-size: 0.7rem;">
-                                <span>Canal: {{live.channelName}}</span>
+                                <span fxFlex="70%" fxLayoutAlign="start center">Canal: {{live.channelName}}</span>
+                                <span fxFlex></span>
+                                <span fxFlex="25%" fxLayoutAlign="end center">
+                                  
+                                <!-- <button mat-mini-fab color="accent" aria-label="" (click)="addLive()"><mat-icon>plus_one</mat-icon></button>                                    -->
+                                <a routerLink="/pacientes/update/" class="edit">
+                                  <i class="material-icons">
+                                      edit
+                                  </i>
+                              </a>
+                              <a routerLink="/pacientes/delete/" class="delete">
+                                  <i class="material-icons">
+                                      delete
+                                  </i>
+                              </a>                                  
+                                  
+                              </span>
                             </p>
                         </div>
                     </mat-card-title>
