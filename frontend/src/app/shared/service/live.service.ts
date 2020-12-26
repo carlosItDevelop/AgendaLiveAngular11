@@ -21,10 +21,11 @@ export class LiveService {
 
   constructor(private httpClient: HttpClient) { }
 
-  public getLivesWithFlag(_page?: string, _limit?: string): Observable<ResponsePageable> {
+  /* Com paginação no server */
+  public obterLivesPaginadas(_page?: string, _limit?: string): Observable<ResponsePageable> {
     return this.httpClient.get<ResponsePageable>(this.apiUrl + '?_page=' + _page + '&_limit=' + _limit);
   }
-
+  /* Sem paginação no server */
   // public getLivesWithFlag(): Observable<ResponsePageable> {
   //   return this.httpClient.get<ResponsePageable>(this.apiUrl);
   // }

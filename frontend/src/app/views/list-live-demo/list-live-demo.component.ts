@@ -17,12 +17,12 @@ export class ListLiveDemoComponent implements OnInit {
   constructor(private liveService: LiveService, private sanitizer: DomSanitizer) {}
 
   ngOnInit(): void {
-    this.getLives();
+    this.obterLives();
   }
 
-  getLives(): void {
+  obterLives(): void {
     // this.liveService.getLivesWithFlag('previous').subscribe(data => {
-    this.liveService.getLivesWithFlag('1','5').subscribe(dados => {
+    this.liveService.obterLivesPaginadas('1','5').subscribe(dados => {
       this.livesPrevious = dados;
 
       this.livesPrevious.forEach((live: { urlSafe: SafeResourceUrl; liveLink: string;}) => {
