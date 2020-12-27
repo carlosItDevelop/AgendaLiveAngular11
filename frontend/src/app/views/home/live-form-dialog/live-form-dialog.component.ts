@@ -18,7 +18,7 @@ export class LiveFormDialogComponent implements OnInit {
   public statusDaLive: StatusDaLive | any;
 
   constructor(
-        public dialogRef: MatDialogRef<LiveFormDialogComponent>,
+        private dialogRef: MatDialogRef<LiveFormDialogComponent>,
         private fb: FormBuilder,
         private rest: LiveService,
         private statusDasLivesService: StatusDaLiveService

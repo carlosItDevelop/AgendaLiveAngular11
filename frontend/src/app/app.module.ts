@@ -1,3 +1,4 @@
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { MenuModule } from './shared/menu/menu.module';
 import { HomeComponent } from './views/home/home.component';
 import { BrowserModule } from '@angular/platform-browser';
@@ -18,7 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { LocalDateTimePipe } from './shared/pipe/local-date-time.pipe';
 import { MatChipsModule } from '@angular/material/chips';
-import { MatDialogModule } from '@angular/material/dialog';
+import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { LiveFormDialogComponent } from './views/home/live-form-dialog/live-form-dialog.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatNativeDateModule } from '@angular/material/core';
@@ -27,6 +28,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { MatSelectModule } from '@angular/material/select';
+import { LiveUpdateComponent } from './components/live-update/live-update.component';
+import { LiveDeleteComponent } from './components/live-delete/live-delete.component';
+import { LiveTableComponent } from './components/live-table/live-table.component';
 
 
 
@@ -38,7 +42,10 @@ import { MatSelectModule } from '@angular/material/select';
     HomeComponent,
     ListLiveDemoComponent,
     LocalDateTimePipe,
-    LiveFormDialogComponent
+    LiveFormDialogComponent,
+    LiveUpdateComponent,
+    LiveDeleteComponent,
+    LiveTableComponent
   ],
   imports: [
     BrowserModule,
@@ -64,7 +71,12 @@ import { MatSelectModule } from '@angular/material/select';
     MatSelectModule
   ],
   providers: [
-    LocalDateTimePipe
+    LocalDateTimePipe,
+    MatSnackBar,
+    {
+      provide: MatDialogRef,
+      useValue: {}
+    }
   ],
   bootstrap: [AppComponent]
 })

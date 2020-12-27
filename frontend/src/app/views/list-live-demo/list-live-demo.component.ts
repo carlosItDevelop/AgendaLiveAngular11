@@ -2,6 +2,9 @@ import { LiveService } from './../../shared/service/live.service';
 import { Live } from './../../shared/models/live.model';
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { LiveUpdateComponent } from 'src/app/components/live-update/live-update.component';
+import { MatDialog } from '@angular/material/dialog';
+import { LiveDeleteComponent } from 'src/app/components/live-delete/live-delete.component';
 
 
 @Component({
@@ -20,16 +23,18 @@ export class ListLiveDemoComponent implements OnInit {
   assistindo: boolean = false;
   assistida: boolean = false;
 
-  constructor(private liveService: LiveService, private sanitizer: DomSanitizer) {}
+  constructor(
+    private liveService: LiveService,
+    private sanitizer: DomSanitizer,
+    private dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.obterLivesAssistir();
-    this.obterLivesAssistindo();
-    this.obterLivesAssistida();
+    //this.obterLivesAssistindo();
+    //this.obterLivesAssistida();
   }
 
   obterLivesAssistir(): void {
-    // this.liveService.getLivesWithFlag('previous').subscribe(data => {
     this.liveService.obterLivesPaginadas('assistir','1','5').subscribe(dados => {
       this.livesAssistir = dados;
 
@@ -44,7 +49,6 @@ export class ListLiveDemoComponent implements OnInit {
 
 
   obterLivesAssistindo(): void {
-    // this.liveService.getLivesWithFlag('previous').subscribe(data => {
     this.liveService.obterLivesPaginadas('assistindo','1','5').subscribe(dados => {
       this.livesAssistindo = dados;
 
@@ -60,7 +64,6 @@ export class ListLiveDemoComponent implements OnInit {
 
 
   obterLivesAssistida(): void {
-    // this.liveService.getLivesWithFlag('previous').subscribe(data => {
     this.liveService.obterLivesPaginadas('assistida','1','5').subscribe(dados => {
       this.livesAssistida = dados;
 
@@ -73,6 +76,30 @@ export class ListLiveDemoComponent implements OnInit {
     });
   }
 
+
+  openLiveForDelete(): void {
+    const dialogRef = this.dialog.open(LiveDeleteComponent, {
+      minWidth: '400px'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+
+  }
+
+
+
+  openLiveForUpdate(): void {
+    const dialogRef = this.dialog.open(LiveUpdateComponent, {
+      minWidth: '400px'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+
+  }
 
 
 }

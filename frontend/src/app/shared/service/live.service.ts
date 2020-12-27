@@ -1,7 +1,8 @@
+import { map, catchError } from 'rxjs/operators';
+import { Live } from './../models/live.model';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { Live } from '../models/live.model';
+import { ErrorHandler, Injectable } from '@angular/core';
+import { EMPTY, Observable } from 'rxjs';
 import { ResponsePageable } from '../models/reponsePageable.model';
 
 @Injectable({
@@ -18,23 +19,31 @@ export class LiveService {
       'Content-Type': 'application/json'
     })
   };
+  errorHandler: any;
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private http: HttpClient, errorHandler: ErrorHandler) { }
 
   /* Com paginação no server */
   public obterLivesPaginadas(_statusLive: string, _page?: string, _limit?: string): Observable<ResponsePageable> {
-    return this.httpClient.get<ResponsePageable>(this.apiUrl + '?statusLive=' + _statusLive + '&_page=' + _page + '&_limit=' + _limit);
+    return this.http.get<ResponsePageable>(this.apiUrl + '?statusLive=' + _statusLive + '&_page=' + _page + '&_limit=' + _limit);
   }
-
 
 
   /* Sem paginação no server */
   // public getLivesWithFlag(): Observable<ResponsePageable> {
-  //   return this.httpClient.get<ResponsePageable>(this.apiUrl);
+  //   return this.http.get<ResponsePageable>(this.apiUrl);
   // }
 
   public postLives(live: Live): Observable<Live> {
-    return this.httpClient.post<Live>(this.apiUrl, live, this.httpOptions);
-  }
+    return this.http.post<Live>(this.apiUrl, live, this.httpOptions);
+  };
+
+  public putLive(live: Live): Observable<any> {
+    const url = `${this.apiUrl}/${live.id}`;
+    return this.http.put<Live>(url, live, this.httpOptions).pipe(
+      map((obj) => obj),
+      catchError(e => this.errorHandler(e))
+    );
+  };
 
 }
