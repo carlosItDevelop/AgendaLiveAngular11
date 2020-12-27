@@ -195,7 +195,25 @@
       "liveDate": "2019-09-09T04:35",
       "liveTime": "04:35",
       "statusLive": "assistindo",
-      "id": "jLdvyve"
+      "id": "22"
+    },
+    {
+      "liveName": "ASP.NET Core Web API CRUD with Angular 11",
+      "channelName": "CodAffection",
+      "liveLink": "https://www.youtube.com/embed/S5dzfuh3t8U",
+      "liveDate": "2020-12-07T12:52",
+      "liveTime": "12:52",
+      "statusLive": "assistir",
+      "id": "23"
+    },
+    {
+      "liveName": "Como criar uma REST API com Spring Boot (tutorial passo a passo)",
+      "channelName": " AlgaWorks",
+      "liveLink": "https://www.youtube.com/embed/9GWK9A79tEc",
+      "liveDate": "2020-10-30T10:03",
+      "liveTime": "10:03",
+      "statusLive": "assistir",
+      "id": "qlbwLZM"
     }
   ],
   "statusDaLive": [

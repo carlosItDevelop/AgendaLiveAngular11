@@ -9,10 +9,8 @@
         <div *ngIf="assistir" fxLayout="row wrap" fxLayoutAlign="start start" style="padding: 2%;">
             <ng-container *ngFor="let live of livesAssistir" style="margin: 0.5%;">
 
-
                 <mat-card class="mat-elevation-z5 mat-card-live" fxFlex="0 1 calc(33.3% - 11px;)" fxFlex.lt-md="0 1 calc(50% - 11px;)" fxFlex.lt-sm="100%;">
                     <!-- <mat-card class="mat-elevation-z5 mat-card-live" fxFlex="0 1 calc(25% - 11px;)" fxFlex.lt-md="0 1 calc(50% - 11px;)" fxFlex.lt-sm="100%;"> -->
-
 
                     <mat-card-title class="mat-card-title-live">
                         <div class="row">
@@ -31,12 +29,12 @@
                                 <span fxFlex="25%" fxLayoutAlign="end center">
                                     
                                   <!-- <button mat-mini-fab color="accent" aria-label="" (click)="addLive()"><mat-icon>plus_one</mat-icon></button>                                    -->
-                                  <a routerLink="/pacientes/update/" class="edit">
+                                  <a routerLink="/lives/update/" class="edit">
                                     <i class="material-icons">
                                         edit
                                     </i>
                                 </a>
-                                <a routerLink="/pacientes/delete/" class="delete">
+                                <a routerLink="/lives/delete/" class="delete">
                                     <i class="material-icons">
                                         delete
                                     </i>
@@ -57,7 +55,6 @@
                     </mat-card-content>
                 </mat-card>
 
-
             </ng-container>
         </div>
     </mat-tab>
@@ -74,10 +71,8 @@
         <div *ngIf="assistindo" fxLayout="row wrap" fxLayoutAlign="start start" style="padding: 2%;">
             <ng-container *ngFor="let live of livesAssistindo" style="margin: 0.5%;">
 
-
                 <mat-card class="mat-elevation-z5 mat-card-live" fxFlex="0 1 calc(33.3% - 11px;)" fxFlex.lt-md="0 1 calc(50% - 11px;)" fxFlex.lt-sm="100%;">
                     <!-- <mat-card class="mat-elevation-z5 mat-card-live" fxFlex="0 1 calc(25% - 11px;)" fxFlex.lt-md="0 1 calc(50% - 11px;)" fxFlex.lt-sm="100%;"> -->
-
 
                     <mat-card-title class="mat-card-title-live">
                         <div class="row">
@@ -96,12 +91,12 @@
                                 <span fxFlex="25%" fxLayoutAlign="end center">
                                   
                                 <!-- <button mat-mini-fab color="accent" aria-label="" (click)="addLive()"><mat-icon>plus_one</mat-icon></button>                                    -->
-                                <a routerLink="/pacientes/update/" class="edit">
+                                <a routerLink="/lives/update/" class="edit">
                                   <i class="material-icons">
                                       edit
                                   </i>
                               </a>
-                              <a routerLink="/pacientes/delete/" class="delete">
+                              <a routerLink="/lives/delete/" class="delete">
                                   <i class="material-icons">
                                       delete
                                   </i>
@@ -122,7 +117,6 @@
                     </mat-card-content>
                 </mat-card>
 
-
             </ng-container>
         </div>
     </mat-tab>
@@ -139,10 +133,8 @@
         <div *ngIf="assistida" fxLayout="row wrap" fxLayoutAlign="start start" style="padding: 2%;">
             <ng-container *ngFor="let live of livesAssistida" style="margin: 0.5%;">
 
-
                 <mat-card class="mat-elevation-z5 mat-card-live" fxFlex="0 1 calc(33.3% - 11px;)" fxFlex.lt-md="0 1 calc(50% - 11px;)" fxFlex.lt-sm="100%;">
                     <!-- <mat-card class="mat-elevation-z5 mat-card-live" fxFlex="0 1 calc(25% - 11px;)" fxFlex.lt-md="0 1 calc(50% - 11px;)" fxFlex.lt-sm="100%;"> -->
-
 
                     <mat-card-title class="mat-card-title-live">
                         <div class="row">
@@ -161,12 +153,12 @@
                                 <span fxFlex="25%" fxLayoutAlign="end center">
                                   
                                 <!-- <button mat-mini-fab color="accent" aria-label="" (click)="addLive()"><mat-icon>plus_one</mat-icon></button>                                    -->
-                                <a routerLink="/pacientes/update/" class="edit">
+                                <a routerLink="/lives/update/" class="edit">
                                   <i class="material-icons">
                                       edit
                                   </i>
                               </a>
-                              <a routerLink="/pacientes/delete/" class="delete">
+                              <a routerLink="/lives/delete/" class="delete">
                                   <i class="material-icons">
                                       delete
                                   </i>
