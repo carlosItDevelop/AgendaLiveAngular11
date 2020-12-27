@@ -41,7 +41,7 @@ export class LiveUpdateComponent implements OnInit {
 
     this.statusDasLivesService.obterStatusDasLives().subscribe(statusDaLive => {
       this.statusDaLive = statusDaLive;
-      console.log(statusDaLive);
+      //console.log(statusDaLive);
     });
 
   }

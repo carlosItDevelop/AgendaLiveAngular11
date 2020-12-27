@@ -1,3 +1,4 @@
+import { FormGroup } from '@angular/forms';
 import { LiveService } from './../../shared/service/live.service';
 import { Live } from './../../shared/models/live.model';
 import { Component, OnInit } from '@angular/core';
@@ -26,19 +27,19 @@ export class ListLiveDemoComponent implements OnInit {
   constructor(
     private liveService: LiveService,
     private sanitizer: DomSanitizer,
-    private dialog: MatDialog) {}
+    private dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.obterLivesAssistir();
-    //this.obterLivesAssistindo();
-    //this.obterLivesAssistida();
+    this.obterLivesAssistindo();
+    this.obterLivesAssistida();
   }
 
   obterLivesAssistir(): void {
-    this.liveService.obterLivesPaginadas('assistir','1','5').subscribe(dados => {
+    this.liveService.obterLivesPaginadas('assistir', '1', '5').subscribe(dados => {
       this.livesAssistir = dados;
 
-      this.livesAssistir.forEach((live: { urlSafe: SafeResourceUrl; liveLink: string;}) => {
+      this.livesAssistir.forEach((live: { urlSafe: SafeResourceUrl; liveLink: string; }) => {
         live.urlSafe = this.sanitizer.bypassSecurityTrustResourceUrl(live.liveLink);
       });
 
@@ -49,10 +50,10 @@ export class ListLiveDemoComponent implements OnInit {
 
 
   obterLivesAssistindo(): void {
-    this.liveService.obterLivesPaginadas('assistindo','1','5').subscribe(dados => {
+    this.liveService.obterLivesPaginadas('assistindo', '1', '5').subscribe(dados => {
       this.livesAssistindo = dados;
 
-      this.livesAssistindo.forEach((live: { urlSafe: SafeResourceUrl; liveLink: string;}) => {
+      this.livesAssistindo.forEach((live: { urlSafe: SafeResourceUrl; liveLink: string; }) => {
         live.urlSafe = this.sanitizer.bypassSecurityTrustResourceUrl(live.liveLink);
       });
 
@@ -64,10 +65,10 @@ export class ListLiveDemoComponent implements OnInit {
 
 
   obterLivesAssistida(): void {
-    this.liveService.obterLivesPaginadas('assistida','1','5').subscribe(dados => {
+    this.liveService.obterLivesPaginadas('assistida', '1', '5').subscribe(dados => {
       this.livesAssistida = dados;
 
-      this.livesAssistida.forEach((live: { urlSafe: SafeResourceUrl; liveLink: string;}) => {
+      this.livesAssistida.forEach((live: { urlSafe: SafeResourceUrl; liveLink: string; }) => {
         live.urlSafe = this.sanitizer.bypassSecurityTrustResourceUrl(live.liveLink);
       });
 
@@ -90,13 +91,23 @@ export class ListLiveDemoComponent implements OnInit {
 
 
 
-  openLiveForUpdate(): void {
+  openLiveForUpdate(live: Live): void {
     const dialogRef = this.dialog.open(LiveUpdateComponent, {
       minWidth: '400px'
     });
-
+    console.log("==============================");
+    console.log(live);
+    console.log("==============================");
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
+      console.log("Dialog fechado");
+      console.log("==============================");
+      console.log("ID: " + live.id);
+      console.log("Canal: " + live.channelName);
+      console.log("Data: " + live.liveDate);
+      console.log("Link: " + live.liveLink);
+      console.log("Hora: " + live.liveTime);
+      console.log("Status: " + live.statusLive);
+      console.log("==============================");
     });
 
   }
