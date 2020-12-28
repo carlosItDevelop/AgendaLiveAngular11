@@ -20,7 +20,6 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { LocalDateTimePipe } from './shared/pipe/local-date-time.pipe';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
-import { LiveFormDialogComponent } from './views/home/live-form-dialog/live-form-dialog.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
@@ -43,8 +42,7 @@ import { LiveAddComponent } from './components/live-add/live-add.component';
     AppComponent,
     HomeComponent,
     ListLiveDemoComponent,
-    LocalDateTimePipe,
-    LiveFormDialogComponent,
+    LocalDateTimePipe,    
     LiveUpdateComponent,
     LiveDeleteComponent,
     LiveTableComponent,
@@ -83,6 +81,6 @@ import { LiveAddComponent } from './components/live-add/live-add.component';
     }    
   ],
   bootstrap: [AppComponent],
-  entryComponents: [LiveUpdateComponent] // Retirar depois, pois está depreciado (não é mais necessário!)
+  entryComponents: [LiveUpdateComponent, LiveAddComponent] // Retirar depois, pois está depreciado (não é mais necessário!)
 })
 export class AppModule { }

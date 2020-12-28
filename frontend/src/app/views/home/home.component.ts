@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { LiveFormDialogComponent } from './live-form-dialog/live-form-dialog.component';
+import { LiveAddComponent } from 'src/app/components/live-add/live-add.component';
+
 
 @Component({
   selector: 'app-home',
@@ -15,7 +16,7 @@ export class HomeComponent implements OnInit {
   }
 
   addLive(): void {
-    const dialogRef = this.dialog.open(LiveFormDialogComponent, {
+    const dialogRef = this.dialog.open(LiveAddComponent, {
       minWidth: '400px'
     });
 
