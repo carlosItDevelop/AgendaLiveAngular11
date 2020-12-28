@@ -7,8 +7,6 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ListLiveDemoComponent } from './views/list-live-demo/list-live-demo.component';
-
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
@@ -40,8 +38,7 @@ import { LiveAddComponent } from './components/live-add/live-add.component';
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    ListLiveDemoComponent,
+    HomeComponent,    
     LocalDateTimePipe,    
     LiveUpdateComponent,
     LiveDeleteComponent,
@@ -81,6 +78,6 @@ import { LiveAddComponent } from './components/live-add/live-add.component';
     }    
   ],
   bootstrap: [AppComponent],
-  entryComponents: [LiveUpdateComponent, LiveAddComponent] // Retirar depois, pois está depreciado (não é mais necessário!)
+  entryComponents: [LiveListComponent, LiveUpdateComponent, LiveAddComponent] // Retirar depois, pois está depreciado (não é mais necessário!)
 })
 export class AppModule { }
