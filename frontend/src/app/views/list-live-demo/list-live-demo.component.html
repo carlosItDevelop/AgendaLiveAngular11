@@ -28,14 +28,14 @@
                                 <span fxFlex></span>
                                 <span fxFlex="25%" fxLayoutAlign="end center">
 
-                                  <!-- <button mat-mini-fab color="accent" aria-label="" (click)="addLive()"><mat-icon>plus_one</mat-icon></button>                                    -->
-                                  <a routerLink="" (click)="getLiveForUpdate(live)" class="edit">
-                                    <i class="material-icons">
+                                  <!-- <button mat-mini-fab color="accent" aria-label="" (click)="getLiveForUpdate(live)"><mat-icon>plus_one</mat-icon></button> -->
+                                  <a class="edit">
+                                    <i class="material-icons" (click)="getLiveForUpdate(live)">
                                         edit
                                     </i>
                                 </a>
-                                <a routerLink="" (click)="openLiveForDelete()" class="delete">
-                                    <i class="material-icons">
+                                <a class="delete">
+                                    <i class="material-icons" (click)="openLiveForDelete()">
                                         delete
                                     </i>
                                 </a>

@@ -26,9 +26,11 @@
 }
 
 .edit>i {
-    color: cadetblue
+    color: cadetblue;
+    cursor: pointer;
 }
 
 .delete>i {
     color: red;
+    cursor: pointer;
 }
