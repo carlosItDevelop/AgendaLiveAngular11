@@ -31,6 +31,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { LiveUpdateComponent } from './components/live-update/live-update.component';
 import { LiveDeleteComponent } from './components/live-delete/live-delete.component';
 import { LiveTableComponent } from './components/live-table/live-table.component';
+import { LiveListComponent } from './components/live-list/live-list.component';
+import { LiveAddComponent } from './components/live-add/live-add.component';
 
 
 
@@ -45,7 +47,9 @@ import { LiveTableComponent } from './components/live-table/live-table.component
     LiveFormDialogComponent,
     LiveUpdateComponent,
     LiveDeleteComponent,
-    LiveTableComponent
+    LiveTableComponent,
+    LiveListComponent,
+    LiveAddComponent
   ],
   imports: [
     BrowserModule,
@@ -76,7 +80,7 @@ import { LiveTableComponent } from './components/live-table/live-table.component
     {
       provide: MatDialogRef,
       useValue: {}
-    }
+    }    
   ],
   bootstrap: [AppComponent],
   entryComponents: [LiveUpdateComponent] // Retirar depois, pois está depreciado (não é mais necessário!)

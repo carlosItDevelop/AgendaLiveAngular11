@@ -1,15 +1,12 @@
-import { Observable } from 'rxjs';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormGroup } from '@angular/forms';
 import { LiveService } from './../../shared/service/live.service';
 import { Live } from './../../shared/models/live.model';
 import { Component, Inject, OnInit } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { LiveUpdateComponent } from 'src/app/components/live-update/live-update.component';
-import { MatDialog, MatDialogConfig, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dialog';
 import { LiveDeleteComponent } from 'src/app/components/live-delete/live-delete.component';
-
-
-
+import { result } from 'lodash';
 
 @Component({
   selector: 'app-list-live-demo',
@@ -17,16 +14,6 @@ import { LiveDeleteComponent } from 'src/app/components/live-delete/live-delete.
   styleUrls: ['./list-live-demo.component.css']
 })
 export class ListLiveDemoComponent implements OnInit {
-
-  formUpdate: FormGroup = this.fb.group({
-    id: [''],
-    liveName: ['', Validators.required],
-    channelName: ['', Validators.required],
-    liveLink: ['', Validators.required],
-    liveDate: ['', Validators.required],
-    liveTime: ['', Validators.required],
-    statusLive: ['', Validators.required]
-  });
 
   livesAssistir: any | Live[]
   livesAssistida: any | Live[]
@@ -42,8 +29,9 @@ export class ListLiveDemoComponent implements OnInit {
     private sanitizer: DomSanitizer,
     private dialog: MatDialog,
     private dialogRefUpdate: MatDialogRef<LiveUpdateComponent>,
-    private fb: FormBuilder,
+
   ) { }
+
 
   ngOnInit(): void {
     this.obterLivesAssistir();
@@ -102,32 +90,37 @@ export class ListLiveDemoComponent implements OnInit {
 
   }
 
-  getLiveForUpdate(live: Live) {
-    this.formUpdate = this.liveService.populateForm(live);
+  getLivePorId(live: Live) {
+    this.liveService.getLivePorId(live).subscribe(result => {
+      console.log('NA LISTA');
+      console.log(result);
+      console.log('=====================================');
 
-    console.log('ANTES DE ABRIR O DIALOG:');
-    console.log(this.formUpdate);
-    console.log('==========================');
-    
+      const dialogConfig = new MatDialogConfig();
+      dialogConfig.disableClose = true;
+      dialogConfig.autoFocus = true;
+      dialogConfig.minWidth = '400px';
+      dialogConfig.data = {
+        id: result.id,
+        liveName: result.liveName,
+        channelName: result.channelName,
+        liveDate: result.liveDate,
+        liveLink: result.liveLink,
+        liveTime: result.liveTime,
+        statusLive: result.statusLive
+      }
 
-    const dialogConfig = new MatDialogConfig();
-    dialogConfig.disableClose = true;
-    dialogConfig.autoFocus = true;
-    dialogConfig.minWidth = '400px';
+      console.log('ANTES DE ABRIR DIALOG => DIALOGCONFIG.DATA');
+      console.log(dialogConfig.data);
+      console.log('=====================================');
 
-    dialogConfig.data =  this.formUpdate;
+      this.dialogRefUpdate = this.dialog.open(LiveUpdateComponent, dialogConfig);
 
-
-    console.log('ANTES AINDA: DIALOGCONFIG.DATA');  
-    console.log(dialogConfig.data);
-    console.log('===============================');  
-
-    this.dialogRefUpdate = this.dialog.open(LiveUpdateComponent, dialogConfig);
-
-    this.dialogRefUpdate.afterClosed().subscribe(result => {
-      console.log('APÓS MODAL FECHADO:');
-      console.log(this.formUpdate);
+      this.dialogRefUpdate.afterClosed().subscribe(result => {
+        console.log('DIALOG FECHADO!');
+      });
     });
   }
+
 
 }

@@ -1,4 +1,5 @@
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Data } from '@angular/router';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ResponsePageable } from './../models/reponsePageable.model';
 
 import { map, catchError } from 'rxjs/operators';
@@ -32,37 +33,34 @@ export class LiveService {
   constructor(
     private http: HttpClient,
     errorHandler: ErrorHandler,
-    private dialogRef: MatDialogRef<LiveFormDialogComponent>,
-    private fb: FormBuilder,
   ) { }
 
 
-  liveForm: FormGroup = this.fb.group({
-    id: [''],
-    liveName: ['', Validators.required],
-    channelName: ['', Validators.required],
-    liveLink: ['', Validators.required],
-    liveDate: ['', Validators.required],
-    liveTime: ['', Validators.required],
-    statusLive: ['', Validators.required]
-  });
-
-  // initializeFormGroup() {
-  //   this.liveForm.setValue({
-  //     id: null,
-  //     liveName: '',
-  //     channelName: '',
-  //     liveLink: '',
-  //     liveDate: '',
-  //     liveTime: '',
-  //     statusLive: 'assistir'
-  //   });
-  // }
+  liveForm: FormGroup = new FormGroup({
+    id: new FormControl(null),
+    liveName: new FormControl('', Validators.required),
+    channelName: new FormControl('', Validators.required),
+    liveLink: new FormControl('', Validators.required),
+    liveDate: new FormControl('', Validators.required),
+    liveTime: new FormControl('', Validators.required),
+    statusLive: new FormControl('', Validators.required)
+  });  
 
 
+  initializeFormGroup() {
+    this.liveForm.setValue({
+      id: null,
+      liveName: '',
+      channelName: '',
+      liveLink: '',
+      liveDate: '',
+      liveTime: '',
+      statusLive: 'assistir'
+    });
+  }
 
 
-  populateForm(live: Live): any {
+  populateForm(live: Live) {
     this.liveForm.setValue(_.omit(live,'urlSafe'));
     console.log('DADOS SETADOS NO SERVICE:');
     console.log(this.liveForm.value);
@@ -74,6 +72,11 @@ export class LiveService {
     return this.http.get<ResponsePageable>(this.apiUrl + '?statusLive=' + _statusLive + '&_page=' + _page + '&_limit=' + _limit);
   }
 
+  getLivePorId(live: Live): Observable<Live>{
+    let id = live.id;
+    return this.http.get<Live>(`${this.apiUrl}/${id}`);    
+  }  
+
 
   public postLives(live: Live): Observable<Live> {
     return this.http.post<Live>(this.apiUrl, live, this.httpOptions);
@@ -81,7 +84,7 @@ export class LiveService {
 
   public putLive(live: Live): Observable<any> {
     const url = `${this.apiUrl}/${live.id}`;
-    return this.http.put<Live>(url, this.httpOptions).pipe(
+    return this.http.put<Live>(url, live, this.httpOptions).pipe(
       map((obj) => obj),
       catchError(e => this.errorHandler(e))
     );

@@ -30,7 +30,8 @@
 
                                   <!-- <button mat-mini-fab color="accent" aria-label="" (click)="getLiveForUpdate(live)"><mat-icon>plus_one</mat-icon></button> -->
                                   <a class="edit">
-                                    <i class="material-icons" (click)="getLiveForUpdate(live)">
+                                    <!-- <i class="material-icons" (click)="getLiveForUpdate(live)"> -->
+                                      <i class="material-icons" (click)="getLivePorId(live)">
                                         edit
                                     </i>
                                 </a>
@@ -91,7 +92,7 @@
                                 <span fxFlex="25%" fxLayoutAlign="end center">
 
                                   <!-- <button mat-mini-fab color="accent" aria-label="" (click)="addLive()"><mat-icon>plus_one</mat-icon></button>                                    -->
-                                  <a routerLink="" (click)="getLiveForUpdate(live)" class="edit">
+                                  <a routerLink="" (click)="getLivePorId(live)" class="edit">
                                     <i class="material-icons">
                                         edit
                                     </i>
@@ -153,7 +154,7 @@
                                 <span fxFlex="25%" fxLayoutAlign="end center">
 
                                   <!-- <button mat-mini-fab color="accent" aria-label="" (click)="addLive()"><mat-icon>plus_one</mat-icon></button>                                    -->
-                                  <a routerLink="#" (click)="getLiveForUpdate(live)" class="edit">
+                                  <a routerLink="#" (click)="getLivePorId(live)" class="edit">
                                     <i class="material-icons">
                                         edit
                                     </i>

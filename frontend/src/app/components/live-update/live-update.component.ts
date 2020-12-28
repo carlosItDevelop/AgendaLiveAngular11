@@ -1,7 +1,7 @@
 import { CoreService } from './../../shared/service/core.service';
 import { LiveService } from './../../shared/service/live.service';
 import { Component, OnInit } from '@angular/core';
-import { Form, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { StatusDaLiveService } from 'src/app/shared/service/status-da-live.service';
 import { StatusDaLive } from 'src/app/shared/models/statusdalive.model';
@@ -24,7 +24,7 @@ export class LiveUpdateComponent implements OnInit {
 
     private dialogRef: MatDialogRef<LiveUpdateComponent>,
     private fb: FormBuilder,
-    private rest: LiveService,
+    private liveService: LiveService,
     private statusDasLivesService: StatusDaLiveService
 
   ) { }
@@ -47,13 +47,10 @@ export class LiveUpdateComponent implements OnInit {
   }
 
 
-
-
-
   atualizarLive(): void {
     let newDate: moment.Moment = moment.utc(this.liveFormUpdate.value.liveDate).local();
     this.liveFormUpdate.value.liveDate = newDate.format("YYYY-MM-DD") + "T" + this.liveFormUpdate.value.liveTime;
-    this.rest.putLive(this.liveFormUpdate.value).subscribe(() => {
+    this.liveService.putLive(this.liveFormUpdate.value).subscribe(() => {
       this.coreService.showMessage('Paciente atualizado com sucesso!');
       this.cancelar();
       window.location.reload();
@@ -64,7 +61,7 @@ export class LiveUpdateComponent implements OnInit {
 
   //   let newDate: moment.Moment = moment.utc(this.liveForm.value.liveDate).local();
   //   this.liveForm.value.liveDate = newDate.format("YYYY-MM-DD") + "T" + this.liveForm.value.liveTime;
-  //   this.rest.putLive(this.liveForm.value).subscribe();
+  //   this.liveService.putLive(this.liveForm.value).subscribe();
   //   this.coreService.showMessage('Live atualizada com sucesso!', false)
   //   this.cancelar();
   //   window.location.reload();
