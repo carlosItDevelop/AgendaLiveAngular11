@@ -1,7 +1,7 @@
 import { CoreService } from './../../shared/service/core.service';
 import { LiveService } from './../../shared/service/live.service';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Form, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { StatusDaLiveService } from 'src/app/shared/service/status-da-live.service';
 import { StatusDaLive } from 'src/app/shared/models/statusdalive.model';
@@ -14,7 +14,7 @@ import * as moment from 'moment';
 })
 export class LiveUpdateComponent implements OnInit {
 
-  public liveForm: FormGroup | any;
+  public liveFormUpdate: FormGroup | any
   public statusDaLive: StatusDaLive | any;
 
 
@@ -30,7 +30,7 @@ export class LiveUpdateComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.liveForm = this.fb.group({
+    this.liveFormUpdate = this.fb.group({
       liveName: ['', Validators.required],
       channelName: ['', Validators.required],
       liveLink: ['', Validators.required],
@@ -51,9 +51,9 @@ export class LiveUpdateComponent implements OnInit {
 
 
   atualizarLive(): void {
-    let newDate: moment.Moment = moment.utc(this.liveForm.value.liveDate).local();
-    this.liveForm.value.liveDate = newDate.format("YYYY-MM-DD") + "T" + this.liveForm.value.liveTime;
-    this.rest.putLive(this.liveForm.value).subscribe(() => {
+    let newDate: moment.Moment = moment.utc(this.liveFormUpdate.value.liveDate).local();
+    this.liveFormUpdate.value.liveDate = newDate.format("YYYY-MM-DD") + "T" + this.liveFormUpdate.value.liveTime;
+    this.rest.putLive(this.liveFormUpdate.value).subscribe(() => {
       this.coreService.showMessage('Paciente atualizado com sucesso!');
       this.cancelar();
       window.location.reload();
@@ -73,7 +73,7 @@ export class LiveUpdateComponent implements OnInit {
 
   cancelar(): void {
     this.dialogRef.close();
-    this.liveForm.reset();
+    this.liveFormUpdate.reset();
   }
 
 }

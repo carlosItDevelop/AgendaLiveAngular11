@@ -78,6 +78,7 @@ import { LiveTableComponent } from './components/live-table/live-table.component
       useValue: {}
     }
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [LiveUpdateComponent] // Retirar depois, pois está depreciado (não é mais necessário!)
 })
 export class AppModule { }

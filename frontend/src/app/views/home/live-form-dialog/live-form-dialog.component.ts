@@ -20,7 +20,7 @@ export class LiveFormDialogComponent implements OnInit {
   constructor(
         private dialogRef: MatDialogRef<LiveFormDialogComponent>,
         private fb: FormBuilder,
-        private rest: LiveService,
+        private liveService: LiveService,
         private statusDasLivesService: StatusDaLiveService
     ) { }
 
@@ -45,7 +45,7 @@ export class LiveFormDialogComponent implements OnInit {
   createLive(): void{
     let newDate: moment.Moment = moment.utc(this.liveForm.value.liveDate).local();
     this.liveForm.value.liveDate = newDate.format("YYYY-MM-DD") + "T" + this.liveForm.value.liveTime;
-    this.rest.postLives(this.liveForm.value).subscribe(result => {});
+    this.liveService.postLives(this.liveForm.value).subscribe(result => {});
     this.cancel();
     window.location.reload();
   }

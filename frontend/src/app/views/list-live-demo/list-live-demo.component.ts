@@ -1,11 +1,14 @@
-import { FormGroup } from '@angular/forms';
+import { Observable } from 'rxjs';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LiveService } from './../../shared/service/live.service';
 import { Live } from './../../shared/models/live.model';
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { LiveUpdateComponent } from 'src/app/components/live-update/live-update.component';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogConfig, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { LiveDeleteComponent } from 'src/app/components/live-delete/live-delete.component';
+
+
 
 
 @Component({
@@ -14,6 +17,16 @@ import { LiveDeleteComponent } from 'src/app/components/live-delete/live-delete.
   styleUrls: ['./list-live-demo.component.css']
 })
 export class ListLiveDemoComponent implements OnInit {
+
+  formUpdate: FormGroup = this.fb.group({
+    id: [''],
+    liveName: ['', Validators.required],
+    channelName: ['', Validators.required],
+    liveLink: ['', Validators.required],
+    liveDate: ['', Validators.required],
+    liveTime: ['', Validators.required],
+    statusLive: ['', Validators.required]
+  });
 
   livesAssistir: any | Live[]
   livesAssistida: any | Live[]
@@ -27,13 +40,17 @@ export class ListLiveDemoComponent implements OnInit {
   constructor(
     private liveService: LiveService,
     private sanitizer: DomSanitizer,
-    private dialog: MatDialog) { }
+    private dialog: MatDialog,
+    private dialogRefUpdate: MatDialogRef<LiveUpdateComponent>,
+    private fb: FormBuilder,
+  ) { }
 
   ngOnInit(): void {
     this.obterLivesAssistir();
     this.obterLivesAssistindo();
     this.obterLivesAssistida();
   }
+
 
   obterLivesAssistir(): void {
     this.liveService.obterLivesPaginadas('assistir', '1', '5').subscribe(dados => {
@@ -48,7 +65,6 @@ export class ListLiveDemoComponent implements OnInit {
     });
   }
 
-
   obterLivesAssistindo(): void {
     this.liveService.obterLivesPaginadas('assistindo', '1', '5').subscribe(dados => {
       this.livesAssistindo = dados;
@@ -61,8 +77,6 @@ export class ListLiveDemoComponent implements OnInit {
 
     });
   }
-
-
 
   obterLivesAssistida(): void {
     this.liveService.obterLivesPaginadas('assistida', '1', '5').subscribe(dados => {
@@ -77,7 +91,6 @@ export class ListLiveDemoComponent implements OnInit {
     });
   }
 
-
   openLiveForDelete(): void {
     const dialogRef = this.dialog.open(LiveDeleteComponent, {
       minWidth: '400px'
@@ -89,28 +102,32 @@ export class ListLiveDemoComponent implements OnInit {
 
   }
 
+  getLiveForUpdate(live: Live) {
+    this.formUpdate = this.liveService.populateForm(live);
+
+    console.log('ANTES DE ABRIR O DIALOG:');
+    console.log(this.formUpdate);
+    console.log('==========================');
+    
+
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+    dialogConfig.minWidth = '400px';
+
+    dialogConfig.data =  this.formUpdate;
 
 
-  openLiveForUpdate(live: Live): void {
-    const dialogRef = this.dialog.open(LiveUpdateComponent, {
-      minWidth: '400px'
+    console.log('ANTES AINDA: DIALOGCONFIG.DATA');  
+    console.log(dialogConfig.data);
+    console.log('===============================');  
+
+    this.dialogRefUpdate = this.dialog.open(LiveUpdateComponent, dialogConfig);
+
+    this.dialogRefUpdate.afterClosed().subscribe(result => {
+      console.log('APÓS MODAL FECHADO:');
+      console.log(this.formUpdate);
     });
-    console.log("==============================");
-    console.log(live);
-    console.log("==============================");
-    dialogRef.afterClosed().subscribe(result => {
-      console.log("Dialog fechado");
-      console.log("==============================");
-      console.log("ID: " + live.id);
-      console.log("Canal: " + live.channelName);
-      console.log("Data: " + live.liveDate);
-      console.log("Link: " + live.liveLink);
-      console.log("Hora: " + live.liveTime);
-      console.log("Status: " + live.statusLive);
-      console.log("==============================");
-    });
-
   }
-
 
 }
