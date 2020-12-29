@@ -89,10 +89,6 @@ export class LiveListComponent implements OnInit {
 
   getLivePorId(live: Live) {
     this.liveService.getLivePorId(live).subscribe(result => {
-      console.log('NA LISTA');
-      console.log(result);
-      console.log('=====================================');
-
       const dialogConfig = new MatDialogConfig();
       dialogConfig.disableClose = true;
       dialogConfig.autoFocus = true;
@@ -106,20 +102,12 @@ export class LiveListComponent implements OnInit {
         liveTime: result.liveTime,
         statusLive: result.statusLive
       }
-
-      console.log('ANTES DE ABRIR DIALOG => DIALOGCONFIG.DATA');
-      console.log(dialogConfig.data);
-      console.log('=====================================');
-
       this.dialogRefUpdate = this.dialog.open(LiveUpdateComponent, dialogConfig);
-
-      //this.dialogRefUpdate = this.dialog.open(LiveUpdateComponent, dialogConfig);
-
       this.dialogRefUpdate.afterClosed().subscribe(result => {
         console.log('DIALOG FECHADO!');
       });
+
     });
   }
-
 
 }
