@@ -1,8 +1,8 @@
 import { LiveUpdateComponent } from 'src/app/components/live-update/live-update.component';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { LiveService } from 'src/app/shared/service/live.service';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
-import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dialog';
+import { MatDialog, MatDialogConfig, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Live } from 'src/app/shared/models/live.model';
 import { LiveDeleteComponent } from '../live-delete/live-delete.component';
 
@@ -27,8 +27,7 @@ export class LiveListComponent implements OnInit {
     private sanitizer: DomSanitizer,
     private dialog: MatDialog,
     private dialogRefUpdate: MatDialogRef<LiveUpdateComponent>,
-
-  ) { }
+    @Inject(MAT_DIALOG_DATA) public data: any) { }
 
 
   ngOnInit(): void {
@@ -52,7 +51,7 @@ export class LiveListComponent implements OnInit {
   }
 
   obterLivesAssistindo(): void {
-    this.liveService.obterLivesPaginadas('assistindo', '1', '5').subscribe(dados => {
+    this.liveService.obterLivesPaginadas('assistindo', '1', '6').subscribe(dados => {
       this.livesAssistindo = dados;
 
       this.livesAssistindo.forEach((live: { urlSafe: SafeResourceUrl; liveLink: string; }) => {
@@ -65,7 +64,7 @@ export class LiveListComponent implements OnInit {
   }
 
   obterLivesAssistida(): void {
-    this.liveService.obterLivesPaginadas('assistida', '1', '5').subscribe(dados => {
+    this.liveService.obterLivesPaginadas('assistida', '1', '6').subscribe(dados => {
       this.livesAssistida = dados;
 
       this.livesAssistida.forEach((live: { urlSafe: SafeResourceUrl; liveLink: string; }) => {
@@ -113,6 +112,8 @@ export class LiveListComponent implements OnInit {
       console.log('=====================================');
 
       this.dialogRefUpdate = this.dialog.open(LiveUpdateComponent, dialogConfig);
+
+      //this.dialogRefUpdate = this.dialog.open(LiveUpdateComponent, dialogConfig);
 
       this.dialogRefUpdate.afterClosed().subscribe(result => {
         console.log('DIALOG FECHADO!');

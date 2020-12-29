@@ -17,7 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { LocalDateTimePipe } from './shared/pipe/local-date-time.pipe';
 import { MatChipsModule } from '@angular/material/chips';
-import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
+import { MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
@@ -67,7 +67,7 @@ import { LiveAddComponent } from './components/live-add/live-add.component';
     MatDatepickerModule,
     MatProgressBarModule,
     MenuModule,
-    MatSelectModule
+    MatSelectModule,
   ],
   providers: [
     LocalDateTimePipe,
@@ -75,9 +75,13 @@ import { LiveAddComponent } from './components/live-add/live-add.component';
     {
       provide: MatDialogRef,
       useValue: {}
+    },
+    { 
+      provide: MAT_DIALOG_DATA, 
+      useValue: {} 
     }    
   ],
   bootstrap: [AppComponent],
-  entryComponents: [LiveListComponent, LiveUpdateComponent, LiveAddComponent] // Retirar depois, pois está depreciado (não é mais necessário!)
+  entryComponents: [LiveUpdateComponent, LiveAddComponent] // Retirar depois, pois está depreciado (não é mais necessário!)
 })
 export class AppModule { }

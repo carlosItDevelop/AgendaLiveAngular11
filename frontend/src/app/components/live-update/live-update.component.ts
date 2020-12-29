@@ -1,10 +1,13 @@
 import { CoreService } from './../../shared/service/core.service';
 import { LiveService } from './../../shared/service/live.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+ 
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MatDialogRef } from '@angular/material/dialog';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { StatusDaLiveService } from 'src/app/shared/service/status-da-live.service';
 import { StatusDaLive } from 'src/app/shared/models/statusdalive.model';
+
+
 import * as moment from 'moment';
 
 @Component({
@@ -25,7 +28,9 @@ export class LiveUpdateComponent implements OnInit {
     private dialogRef: MatDialogRef<LiveUpdateComponent>,
     private fb: FormBuilder,
     private liveService: LiveService,
-    private statusDasLivesService: StatusDaLiveService
+    private statusDasLivesService: StatusDaLiveService,
+    @Inject(MAT_DIALOG_DATA) public data: any
+    
 
   ) { }
 
