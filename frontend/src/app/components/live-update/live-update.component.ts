@@ -1,7 +1,7 @@
 import { CoreService } from './../../shared/service/core.service';
 import { LiveService } from './../../shared/service/live.service';
 import { Component, OnInit, Inject } from '@angular/core';
- 
+
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { StatusDaLiveService } from 'src/app/shared/service/status-da-live.service';
@@ -30,12 +30,13 @@ export class LiveUpdateComponent implements OnInit {
     private liveService: LiveService,
     private statusDasLivesService: StatusDaLiveService,
     @Inject(MAT_DIALOG_DATA) public data: any
-    
+
 
   ) { }
 
   ngOnInit(): void {
     this.liveFormUpdate = this.fb.group({
+      id: [''],
       liveName: ['', Validators.required],
       channelName: ['', Validators.required],
       liveLink: ['', Validators.required],
@@ -46,33 +47,19 @@ export class LiveUpdateComponent implements OnInit {
 
     this.statusDasLivesService.obterStatusDasLives().subscribe(statusDaLive => {
       this.statusDaLive = statusDaLive;
-      //console.log(statusDaLive);
     });
-
   }
 
-
   atualizarLive(): void {
-    let newDate: moment.Moment = moment.utc(this.liveFormUpdate.value.liveDate).local();
+    let newDate: moment.Moment = moment.utc(this.liveFormUpdate.value.liveDate);
     this.liveFormUpdate.value.liveDate = newDate.format("YYYY-MM-DD") + "T" + this.liveFormUpdate.value.liveTime;
+
     this.liveService.putLive(this.liveFormUpdate.value).subscribe(() => {
       this.coreService.showMessage('Paciente atualizado com sucesso!');
       this.cancelar();
       window.location.reload();
     });
   }
-
-  // atualizarLive(): void {
-
-  //   let newDate: moment.Moment = moment.utc(this.liveForm.value.liveDate).local();
-  //   this.liveForm.value.liveDate = newDate.format("YYYY-MM-DD") + "T" + this.liveForm.value.liveTime;
-  //   this.liveService.putLive(this.liveForm.value).subscribe();
-  //   this.coreService.showMessage('Live atualizada com sucesso!', false)
-  //   this.cancelar();
-  //   window.location.reload();
-
-  // }
-
   cancelar(): void {
     this.dialogRef.close();
     this.liveFormUpdate.reset();

@@ -29,19 +29,19 @@
     },
     {
       "id": "4",
-      "liveName": "DDD, Domain-Driven Design c/Elemar Jr. Live #52",
+      "liveName": "DDD, Domain-Driven Design com Elemar Jr. // Live #52",
       "channelName": "Rodrigo Branas",
-      "liveDate": "2020-06-01T19:20:00",
-      "liveLink": "https://www.youtube.com/embed/-LF_TOnaH4Y",
-      "liveTime": "12:32",
+      "liveLink": "https://www.youtube.com/embed/NsQnmmIykoE",
+      "liveDate": "2020-12-30T16:16",
+      "liveTime": "16:16",
       "statusLive": "assistir"
     },
     {
       "id": "5",
       "liveName": "Curso Angular #103: Formulários reativos: Combobox com Objeto (ngValue e compareWith)",
       "channelName": "Loiane Groner",
-      "liveDate": "2018-07-06T19:20:00",
       "liveLink": "https://www.youtube.com/embed/eeElkzR2gd4",
+      "liveDate": "2018-07-19T12:32",
       "liveTime": "12:32",
       "statusLive": "assistir"
     },
@@ -67,8 +67,8 @@
       "id": "8",
       "liveName": "TypeScript // Dicionário do Programador",
       "channelName": "Código Fonte TV",
-      "liveDate": "2019-03-18T19:20:00",
       "liveLink": "https://www.youtube.com/embed/gmupEp468lY",
+      "liveDate": "2019-03-20T20:00",
       "liveTime": "20:00",
       "statusLive": "assistida"
     },

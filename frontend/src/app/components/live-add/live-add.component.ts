@@ -36,7 +36,6 @@ export class LiveAddComponent implements OnInit {
 
     this.statusDasLivesService.obterStatusDasLives().subscribe(statusDaLive => {
       this.statusDaLive = statusDaLive;
-      //console.log(estados);
     })
 
   }

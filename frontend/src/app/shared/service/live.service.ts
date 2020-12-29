@@ -45,7 +45,7 @@ export class LiveService {
 
   initializeFormGroup() {
     this.liveForm.setValue({
-      id: null,
+      id: '',
       liveName: '',
       channelName: '',
       liveLink: '',
@@ -58,14 +58,12 @@ export class LiveService {
 
   populateForm(live: Live) {
     this.liveForm.setValue(_.omit(live,'urlSafe'));
-    console.log('DADOS SETADOS NO SERVICE:');
-    console.log(this.liveForm.value);
     return this.liveForm.value;
   }
 
   /* Com paginação no server */
-  public obterLivesPaginadas(_statusLive: string, _page?: string, _limit?: string): Observable<ResponsePageable> {
-    return this.http.get<ResponsePageable>(this.apiUrl + '?statusLive=' + _statusLive + '&_page=' + _page + '&_limit=' + _limit);
+  public obterLivesPaginadas(_statusLive: string, _page?: string, _limit?: string): Observable<Live[]> {
+    return this.http.get<Live[]>(this.apiUrl + '?statusLive=' + _statusLive + '&_page=' + _page + '&_limit=' + _limit);
   }
 
   getLivePorId(live: Live): Observable<Live>{
@@ -78,12 +76,13 @@ export class LiveService {
     return this.http.post<Live>(this.apiUrl, live, this.httpOptions);
   };
 
-  public putLive(live: Live): Observable<any> {
+  public putLive(live: Live): Observable<Live> {
     const url = `${this.apiUrl}/${live.id}`;
-    return this.http.put<Live>(url, live, this.httpOptions).pipe(
-      map((obj) => obj),
-      catchError(e => this.errorHandler(e))
-    );
+    return this.http.put<Live>(url, live, this.httpOptions);
+    // .pipe(
+    //   map((obj) => obj),
+    //   catchError(e => this.errorHandler(e));
+    // );
   };
 
 }
