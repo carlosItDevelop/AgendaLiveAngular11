@@ -1,27 +1,27 @@
-<h1 mat-dialog-title>Atualizar Live - Id: {{data.id}}</h1>
+<h1 mat-dialog-title>Atualizar Live</h1>
 <div mat-dialog-content>
     <form class="example-form" [formGroup]="liveFormUpdate">
 
-        <input type="hidden" formControlName="id" [(ngModel)]="data.id" name="id">
+        <input type="hidden" formControlName="id" name="id">
 
         <mat-form-field class="example-full-width">
             <mat-label>Nome da Live</mat-label>
-            <input matInput formControlName="liveName" [(ngModel)]="data.liveName" name="liveName">
+            <input matInput formControlName="liveName" name="liveName">
         </mat-form-field>
 
         <mat-form-field class="example-full-width">
             <mat-label>Nome do Canal</mat-label>
-            <input matInput formControlName="channelName" [(ngModel)]="data.channelName" name="channelName">
+            <input matInput formControlName="channelName" name="channelName">
         </mat-form-field>
 
         <mat-form-field class="example-full-width">
             <mat-label>Link Completo</mat-label>
-            <input matInput formControlName="liveLink" [(ngModel)]="data.liveLink" name="liveLink">
+            <input matInput formControlName="liveLink" name="liveLink">
         </mat-form-field>
 
         <mat-form-field appearance="fill" style="width: 100%;">
             <mat-label>Status da Live</mat-label>
-            <mat-select formControlName="statusLive" [(ngModel)]="data.statusLive" name="statuslive" id="statuslive">
+            <mat-select formControlName="statusLive" name="statuslive" id="statuslive">
                 <mat-option *ngFor="let status of statusDaLive" [value]="status.statusLive">
                     {{ status.statusLive }}
                 </mat-option>
@@ -34,7 +34,7 @@
 
                 <mat-form-field color="accent" appearance="fill">
                     <mat-label>Data da Live</mat-label>
-                    <input matInput [matDatepicker]="picker" formControlName="liveDate" [(ngModel)]="data.liveDate" name="liveDate">
+                    <input matInput [matDatepicker]="picker" formControlName="liveDate" name="liveDate">
                     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                     <mat-datepicker #picker></mat-datepicker>
                 </mat-form-field>
@@ -47,16 +47,15 @@
 
                 <mat-form-field color="accent" appearance="fill">
                     <mat-label>Hora da Live</mat-label>
-                    <input type="time" matInput formControlName="liveTime" [(ngModel)]="data.liveTime" name="liveTime" #time>
+                    <input type="time" matInput formControlName="liveTime" name="liveTime" #time>
                 </mat-form-field>
 
             </div>
         </div>
 
-
-
     </form>
 </div>
+
 
 <div mat-dialog-actions>
     <button mat-raised-button color="primary" (click)="atualizarLive()">Atualizar</button>

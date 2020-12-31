@@ -1,13 +1,9 @@
-import { ResponsePageable } from './../models/reponsePageable.model';
-import { map, catchError } from 'rxjs/operators';
 import { Live } from './../models/live.model';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ErrorHandler, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import * as _ from 'lodash';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-
-
+import { FormGroup } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root'
@@ -23,8 +19,9 @@ export class LiveService {
       'Content-Type': 'application/json'
     })
   };
-  errorHandler: any;
 
+  errorHandler: any;
+  liveForm: FormGroup | any;
 
   constructor(
     private http: HttpClient,
@@ -32,15 +29,6 @@ export class LiveService {
   ) { }
 
 
-  liveForm: FormGroup = new FormGroup({
-    id: new FormControl(null),
-    liveName: new FormControl('', Validators.required),
-    channelName: new FormControl('', Validators.required),
-    liveLink: new FormControl('', Validators.required),
-    liveDate: new FormControl('', Validators.required),
-    liveTime: new FormControl('', Validators.required),
-    statusLive: new FormControl('', Validators.required)
-  });  
 
 
   initializeFormGroup() {
@@ -55,11 +43,11 @@ export class LiveService {
     });
   }
 
-
-  populateForm(live: Live) {
-    this.liveForm.setValue(_.omit(live,'urlSafe'));
-    return this.liveForm.value;
-  }
+    // Decidir se vou usar ou mantenho o getLivePorId
+    // public populateForm(form: FormGroup, live: Live) {
+    //   form.setValue(_.omit(live,'urlSafe'));
+    //   return this.liveForm.value;
+    // }
 
   /* Com paginação no server */
   public obterLivesPaginadas(_statusLive: string, _page?: string, _limit?: string): Observable<Live[]> {
@@ -68,8 +56,8 @@ export class LiveService {
 
   getLivePorId(live: Live): Observable<Live>{
     let id = live.id;
-    return this.http.get<Live>(`${this.apiUrl}/${id}`);    
-  }  
+    return this.http.get<Live>(`${this.apiUrl}/${id}`);
+  }
 
 
   public postLives(live: Live): Observable<Live> {

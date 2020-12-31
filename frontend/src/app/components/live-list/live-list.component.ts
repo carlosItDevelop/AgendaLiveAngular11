@@ -17,7 +17,6 @@ export class LiveListComponent implements OnInit {
   livesAssistida: any | Live[]
   livesAssistindo: any | Live[]
 
-
   assistir: boolean = false;
   assistindo: boolean = false;
   assistida: boolean = false;
@@ -103,9 +102,11 @@ export class LiveListComponent implements OnInit {
         statusLive: result.statusLive
       }
       this.dialogRefUpdate = this.dialog.open(LiveUpdateComponent, dialogConfig);
+
       this.dialogRefUpdate.afterClosed().subscribe(result => {
         console.log('DIALOG FECHADO!');
       });
+
 
     });
   }

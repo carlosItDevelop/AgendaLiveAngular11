@@ -1,8 +1,8 @@
 import { CoreService } from './../../shared/service/core.service';
-import { LiveService } from './../../shared/service/live.service';
+import { LiveService } from 'src/app/shared/service/live.service';
 import { Component, OnInit, Inject } from '@angular/core';
 
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { StatusDaLiveService } from 'src/app/shared/service/status-da-live.service';
 import { StatusDaLive } from 'src/app/shared/models/statusdalive.model';
@@ -17,7 +17,18 @@ import * as moment from 'moment';
 })
 export class LiveUpdateComponent implements OnInit {
 
-  public liveFormUpdate: FormGroup | any
+
+
+  public liveFormUpdate: FormGroup =  new FormGroup({
+    id: new FormControl(''),
+    liveName: new FormControl('', Validators.minLength(3)),
+    channelName: new FormControl('', Validators.minLength(2)),
+    liveLink: new FormControl('', Validators.required),
+    liveDate: new FormControl('', Validators.required),
+    liveTime: new FormControl('', Validators.required),
+    statusLive: new FormControl('', Validators.required)
+  });
+
   public statusDaLive: StatusDaLive | any;
 
 
@@ -26,7 +37,6 @@ export class LiveUpdateComponent implements OnInit {
     private coreService: CoreService,
 
     private dialogRef: MatDialogRef<LiveUpdateComponent>,
-    private fb: FormBuilder,
     private liveService: LiveService,
     private statusDasLivesService: StatusDaLiveService,
     @Inject(MAT_DIALOG_DATA) public data: any
@@ -35,15 +45,8 @@ export class LiveUpdateComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.liveFormUpdate = this.fb.group({
-      id: [''],
-      liveName: ['', Validators.required],
-      channelName: ['', Validators.required],
-      liveLink: ['', Validators.required],
-      liveDate: ['', Validators.required],
-      liveTime: ['', Validators.required],
-      statusLive: ['', Validators.required]
-    })
+
+    this.liveFormUpdate.setValue(this.data);
 
     this.statusDasLivesService.obterStatusDasLives().subscribe(statusDaLive => {
       this.statusDaLive = statusDaLive;
