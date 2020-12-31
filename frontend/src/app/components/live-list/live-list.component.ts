@@ -102,6 +102,8 @@ export class LiveListComponent implements OnInit {
         statusLive: result.statusLive
       }
       this.dialogRefUpdate = this.dialog.open(LiveUpdateComponent, dialogConfig);
+      console.log("DADOS CARREGADOS NO MODAL:");
+      console.log(dialogConfig.data);
 
       this.dialogRefUpdate.afterClosed().subscribe(result => {
         console.log('DIALOG FECHADO!');

@@ -55,7 +55,7 @@ export class LiveUpdateComponent implements OnInit {
 
   atualizarLive(): void {
     let newDate: moment.Moment = moment.utc(this.liveFormUpdate.value.liveDate);
-    this.liveFormUpdate.value.liveDate = newDate.format("YYYY-MM-DD") + "T" + this.liveFormUpdate.value.liveTime;
+    this.liveFormUpdate.value.liveDate = newDate.format("YYYY-MM-DD") + "T" + this.liveFormUpdate.value.liveTime + ":00";
 
     this.liveService.putLive(this.liveFormUpdate.value).subscribe(() => {
       this.coreService.showMessage('Paciente atualizado com sucesso!');
