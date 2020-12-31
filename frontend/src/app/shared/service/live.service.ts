@@ -2,7 +2,7 @@ import { Live } from './../models/live.model';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ErrorHandler, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import * as _ from 'lodash';
+// import * as _ from 'lodash';
 import { FormGroup } from '@angular/forms';
 
 @Injectable({

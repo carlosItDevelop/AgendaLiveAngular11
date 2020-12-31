@@ -13,8 +13,8 @@
       "id": "2",
       "liveName": "Introdução ao MongoDB - MongoDB",
       "channelName": "Fábrica de Código",
-      "liveDate": "2020-11-11T17:17:00",
       "liveLink": "https://www.youtube.com/embed/YbyhVxffZfQ",
+      "liveDate": "2020-11-11T17:00:00",
       "liveTime": "17:00",
       "statusLive": "assistir"
     },
@@ -32,7 +32,7 @@
       "liveName": "DDD, Domain-Driven Design com Elemar Jr. // Live #52",
       "channelName": "Rodrigo Branas",
       "liveLink": "https://www.youtube.com/embed/NsQnmmIykoE",
-      "liveDate": "2020-12-31T16:16:00",
+      "liveDate": "2020-12-30T16:16:00",
       "liveTime": "16:16",
       "statusLive": "assistir"
     },
