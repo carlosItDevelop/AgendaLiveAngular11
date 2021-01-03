@@ -37,7 +37,7 @@ export class LiveListComponent implements OnInit {
 
 
   obterLivesAssistir(): void {
-    this.liveService.obterLivesPaginadas('assistir', '1', '5').subscribe(dados => {
+    this.liveService.obterLivesPaginadas('assistir', '1', '9').subscribe(dados => {
       this.livesAssistir = dados;
 
       this.livesAssistir.forEach((live: { urlSafe: SafeResourceUrl; liveLink: string; }) => {
