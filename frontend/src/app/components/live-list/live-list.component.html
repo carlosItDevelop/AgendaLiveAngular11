@@ -7,7 +7,7 @@
         </ng-template>
         <mat-progress-bar *ngIf="!assistir" mode="indeterminate"></mat-progress-bar>
         <div *ngIf="assistir" fxLayout="row wrap" fxLayoutAlign="start start" style="padding: 2%;">
-            <ng-container *ngFor="let live of livesAssistir" style="margin: 0.5%;">
+            <ng-container *ngFor="let liveIni of livesAssistir" style="margin: 0.5%;">
 
                 <mat-card class="mat-elevation-z5 mat-card-live" fxFlex="0 1 calc(33.3% - 11px;)" fxFlex.lt-md="0 1 calc(50% - 11px;)" fxFlex.lt-sm="100%;">
                     <!-- <mat-card class="mat-elevation-z5 mat-card-live" fxFlex="0 1 calc(25% - 11px;)" fxFlex.lt-md="0 1 calc(50% - 11px;)" fxFlex.lt-sm="100%;"> -->
@@ -16,22 +16,22 @@
                         <div class="row">
                             <p>
                                 <span style="font-size: 0.9rem;" fxFlex="70%" fxLayoutAlign="start center">
-                                  {{live.liveName.substring(0,35)}}...
+                                  {{liveIni.liveName.substring(0,35)}}...
                                 </span>
                                 <span fxFlex></span>
                                 <mat-chip class="mat-chip-date" fxFlex="25%" fxLayoutAlign="center center">
-                                    <span style="font-size: 0.7rem;">{{live.liveDate | localDateTime}}</span>
+                                    <span style="font-size: 0.7rem;">{{liveIni.liveDate | localDateTime}}</span>
                                 </mat-chip>
                             </p>
                             <p style="font-size: 0.7rem;">
-                                <span fxFlex="70%" fxLayoutAlign="start center">Canal: {{live.channelName}}</span>
+                                <span fxFlex="70%" fxLayoutAlign="start center">Canal: {{liveIni.channelName}}</span>
                                 <span fxFlex></span>
                                 <span fxFlex="25%" fxLayoutAlign="end center">
 
                                   <!-- <button mat-mini-fab color="accent" aria-label="" (click)="getLiveForUpdate(live)"><mat-icon>plus_one</mat-icon></button> -->
                                   <a class="edit">
                                     <!-- <i class="material-icons" (click)="getLiveForUpdate(live)"> -->
-                                      <i class="material-icons" (click)="getLivePorId(live)">
+                                      <i class="material-icons" (click)="getLivePorId(liveIni)">
                                         edit
                                     </i>
                                 </a>
@@ -49,7 +49,7 @@
                     <mat-card-content fxLayoutAlign="center center">
                         <div>
 
-                            <iframe width="430" height="230" [src]="live.urlSafe" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe width="430" height="230" [src]="liveIni.urlSafe" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             <!-- <iframe width="325" height="174" [src]="live.urlSafe" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
 
                         </div>
@@ -70,7 +70,7 @@
         </ng-template>
         <mat-progress-bar *ngIf="!assistindo" mode="indeterminate"></mat-progress-bar>
         <div *ngIf="assistindo" fxLayout="row wrap" fxLayoutAlign="start start" style="padding: 2%;">
-            <ng-container *ngFor="let live of livesAssistindo" style="margin: 0.5%;">
+            <ng-container *ngFor="let liveAstnd of livesAssistindo" style="margin: 0.5%;">
 
                 <mat-card class="mat-elevation-z5 mat-card-live" fxFlex="0 1 calc(33.3% - 11px;)" fxFlex.lt-md="0 1 calc(50% - 11px;)" fxFlex.lt-sm="100%;">
                     <!-- <mat-card class="mat-elevation-z5 mat-card-live" fxFlex="0 1 calc(25% - 11px;)" fxFlex.lt-md="0 1 calc(50% - 11px;)" fxFlex.lt-sm="100%;"> -->
@@ -79,20 +79,20 @@
                         <div class="row">
                             <p>
                                 <span style="font-size: 0.9rem;" fxFlex="70%" fxLayoutAlign="start center">
-                                  {{live.liveName.substring(0,35)}}...
+                                  {{liveAstnd.liveName.substring(0,35)}}...
                                 </span>
                                 <span fxFlex></span>
                                 <mat-chip class="mat-chip-date" fxFlex="25%" fxLayoutAlign="center center">
-                                    <span style="font-size: 0.7rem;">{{live.liveDate | localDateTime}}</span>
+                                    <span style="font-size: 0.7rem;">{{liveAstnd.liveDate | localDateTime}}</span>
                                 </mat-chip>
                             </p>
                             <p style="font-size: 0.7rem;">
-                                <span fxFlex="70%" fxLayoutAlign="start center">Canal: {{live.channelName}}</span>
+                                <span fxFlex="70%" fxLayoutAlign="start center">Canal: {{liveAstnd.channelName}}</span>
                                 <span fxFlex></span>
                                 <span fxFlex="25%" fxLayoutAlign="end center">
 
                                   <!-- <button mat-mini-fab color="accent" aria-label="" (click)="addLive()"><mat-icon>plus_one</mat-icon></button>                                    -->
-                                  <a routerLink="" (click)="getLivePorId(live)" class="edit">
+                                  <a routerLink="" (click)="getLivePorId(liveAstnd)" class="edit">
                                     <i class="material-icons">
                                         edit
                                     </i>
@@ -111,7 +111,7 @@
                     <mat-card-content fxLayoutAlign="center center">
                         <div>
 
-                            <iframe width="430" height="230" [src]="live.urlSafe" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe width="430" height="230" [src]="liveAstnd.urlSafe" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             <!-- <iframe width="325" height="174" [src]="live.urlSafe" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
 
                         </div>
@@ -131,7 +131,7 @@
         </ng-template>
         <mat-progress-bar *ngIf="!assistida" mode="indeterminate"></mat-progress-bar>
         <div *ngIf="assistida" fxLayout="row wrap" fxLayoutAlign="start start" style="padding: 2%;">
-            <ng-container *ngFor="let live of livesAssistida" style="margin: 0.5%;">
+            <ng-container *ngFor="let liveEnd of livesAssistida" style="margin: 0.5%;">
 
                 <mat-card class="mat-elevation-z5 mat-card-live" fxFlex="0 1 calc(33.3% - 11px;)" fxFlex.lt-md="0 1 calc(50% - 11px;)" fxFlex.lt-sm="100%;">
                     <!-- <mat-card class="mat-elevation-z5 mat-card-live" fxFlex="0 1 calc(25% - 11px;)" fxFlex.lt-md="0 1 calc(50% - 11px;)" fxFlex.lt-sm="100%;"> -->
@@ -140,20 +140,20 @@
                         <div class="row">
                             <p>
                                 <span style="font-size: 0.9rem;" fxFlex="70%" fxLayoutAlign="start center">
-                                {{live.liveName.substring(0,35)}}...
+                                {{liveEnd.liveName.substring(0,35)}}...
                               </span>
                                 <span fxFlex></span>
                                 <mat-chip class="mat-chip-date" fxFlex="25%" fxLayoutAlign="center center">
-                                    <span style="font-size: 0.7rem;">{{live.liveDate | localDateTime}}</span>
+                                    <span style="font-size: 0.7rem;">{{liveEnd.liveDate | localDateTime}}</span>
                                 </mat-chip>
                             </p>
                             <p style="font-size: 0.7rem;">
-                                <span fxFlex="70%" fxLayoutAlign="start center">Canal: {{live.channelName}}</span>
+                                <span fxFlex="70%" fxLayoutAlign="start center">Canal: {{liveEnd.channelName}}</span>
                                 <span fxFlex></span>
                                 <span fxFlex="25%" fxLayoutAlign="end center">
 
                                   <!-- <button mat-mini-fab color="accent" aria-label="" (click)="addLive()"><mat-icon>plus_one</mat-icon></button>                                    -->
-                                  <a routerLink="#" (click)="getLivePorId(live)" class="edit">
+                                  <a routerLink="#" (click)="getLivePorId(liveEnd)" class="edit">
                                     <i class="material-icons">
                                         edit
                                     </i>
@@ -172,7 +172,7 @@
                     <mat-card-content fxLayoutAlign="center center">
                         <div>
 
-                            <iframe width="430" height="230" [src]="live.urlSafe" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe width="430" height="230" [src]="liveEnd.urlSafe" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             <!-- <iframe width="325" height="174" [src]="live.urlSafe" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
 
                         </div>

@@ -14,9 +14,9 @@
       "liveName": "Introdução ao MongoDB - MongoDB",
       "channelName": "Fábrica de Código",
       "liveLink": "https://www.youtube.com/embed/YbyhVxffZfQ",
-      "liveDate": "2020-11-11T17:00:00",
+      "liveDate": "2020-11-15T17:00:00",
       "liveTime": "17:00",
-      "statusLive": "assistir"
+      "statusLive": "assistida"
     },
     {
       "id": "3",
@@ -41,16 +41,16 @@
       "liveName": "Curso Angular #103: Formulários reativos: Combobox com Objeto (ngValue e compareWith)",
       "channelName": "Loiane Groner",
       "liveLink": "https://www.youtube.com/embed/eeElkzR2gd4",
-      "liveDate": "2018-07-19T12:32",
+      "liveDate": "2021-01-03T12:32:00",
       "liveTime": "12:32",
       "statusLive": "assistir"
     },
     {
       "id": "6",
-      "liveName": "O Estado Atual do Angular ft. Loiane Groner | Contrib #02",
+      "liveName": "O Estado Atual do Angular ft. Loiane Groner | Contrib #0",
       "channelName": "Rocketseat",
-      "liveDate": "2020-05-19T19:20:00",
       "liveLink": "https://www.youtube.com/embed/rTG5V0f8vnY",
+      "liveDate": "2020-05-19T12:32:00",
       "liveTime": "12:32",
       "statusLive": "assistir"
     },
@@ -68,7 +68,7 @@
       "liveName": "TypeScript // Dicionário do Programador",
       "channelName": "Código Fonte TV",
       "liveLink": "https://www.youtube.com/embed/gmupEp468lY",
-      "liveDate": "2019-03-20T20:00",
+      "liveDate": "2021-01-05T20:00:00",
       "liveTime": "20:00",
       "statusLive": "assistida"
     },

@@ -13,9 +13,9 @@ import { LiveDeleteComponent } from '../live-delete/live-delete.component';
 })
 export class LiveListComponent implements OnInit {
 
-  livesAssistir: any | Live[]
-  livesAssistida: any | Live[]
-  livesAssistindo: any | Live[]
+  livesAssistir: Live[]|any;
+  livesAssistida: Live[]|any;
+  livesAssistindo: Live[]|any;
 
   assistir: boolean = false;
   assistindo: boolean = false;

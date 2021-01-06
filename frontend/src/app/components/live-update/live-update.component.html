@@ -13,6 +13,9 @@
         <mat-form-field class="example-full-width">
             <mat-label>Nome da Live</mat-label>
             <input matInput formControlName="liveName" name="liveName">
+            <span style="color: red;" *ngIf="liveFormUpdate.get('liveName').errors && (liveFormUpdate.get('liveName').dirty || liveFormUpdate.get('liveName').touched)">
+              <p>Nome da Live é obrigatório!</p>
+            </span>
         </mat-form-field>
 
         <mat-form-field class="example-full-width">
@@ -59,11 +62,17 @@
             </div>
         </div>
 
+        <div>
+            <p>Formulário: {{liveFormUpdate.valid ? "[VÁLIDO]" : "[INVÁLIDO]"}} - {{liveFormUpdate.touched ? "[TOCADO]" : "[VIRGEM]"}} - {{liveFormUpdate.dirty ? "[SUJO]" : "[LIMPO]"}}
+            </p>
+        </div>
+
     </form>
 </div>
 
 
 <div mat-dialog-actions>
-    <button mat-raised-button color="primary" (click)="atualizarLive()">Atualizar</button>
+    <!-- <button mat-raised-button color="primary" (click)="atualizarLive()" *ngIf="liveFormUpdate.valid ? 'disabled' : ''">Atualizar</button> -->
+    <button mat-raised-button color="primary" (click)="atualizarLive()" [disabled]="!liveFormUpdate.valid">Atualizar</button>
     <button mat-button (click)="cancelar()">Cancelar</button>
 </div>
