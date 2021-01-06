@@ -42,13 +42,13 @@ export class LiveUpdateComponent implements OnInit {
       // liveName: ['', Validators.minLength(3)], // Falhando na validação indicidual *ngIf
       // channelName: ['', Validators.minLength(2)],  // Falhando na validação individual *ngIf
 
-      liveName: ['', Validators.required],
-      channelName: ['', Validators.required],
+      liveName: ['', [Validators.required, Validators.minLength(2)]],
+      channelName: ['', [Validators.required, Validators.minLength(3)]],
 
-      liveLink: ['', Validators.required],
+      liveLink: ['', [Validators.required, Validators.minLength(5)]],
       liveDate: ['', Validators.required],
       liveTime: ['', Validators.required],
-      statusLive: ['', Validators.required]
+      statusLive: ['', [Validators.required, Validators.minLength(3)]]
     });
 
     this.liveFormUpdate.setValue(this.data);
