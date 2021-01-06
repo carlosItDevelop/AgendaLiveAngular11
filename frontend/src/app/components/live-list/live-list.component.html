@@ -131,7 +131,7 @@
         </ng-template>
         <mat-progress-bar *ngIf="!assistida" mode="indeterminate"></mat-progress-bar>
         <div *ngIf="assistida" fxLayout="row wrap" fxLayoutAlign="start start" style="padding: 2%;">
-            <ng-container *ngFor="let liveEnd of livesAssistida" style="margin: 0.5%;">
+            <ng-container *ngFor="let liveFin of livesAssistida" style="margin: 0.5%;">
 
                 <mat-card class="mat-elevation-z5 mat-card-live" fxFlex="0 1 calc(33.3% - 11px;)" fxFlex.lt-md="0 1 calc(50% - 11px;)" fxFlex.lt-sm="100%;">
                     <!-- <mat-card class="mat-elevation-z5 mat-card-live" fxFlex="0 1 calc(25% - 11px;)" fxFlex.lt-md="0 1 calc(50% - 11px;)" fxFlex.lt-sm="100%;"> -->
@@ -140,20 +140,20 @@
                         <div class="row">
                             <p>
                                 <span style="font-size: 0.9rem;" fxFlex="70%" fxLayoutAlign="start center">
-                                {{liveEnd.liveName.substring(0,35)}}...
+                                {{liveFin.liveName.substring(0,35)}}...
                               </span>
                                 <span fxFlex></span>
                                 <mat-chip class="mat-chip-date" fxFlex="25%" fxLayoutAlign="center center">
-                                    <span style="font-size: 0.7rem;">{{liveEnd.liveDate | localDateTime}}</span>
+                                    <span style="font-size: 0.7rem;">{{liveFin.liveDate | localDateTime}}</span>
                                 </mat-chip>
                             </p>
                             <p style="font-size: 0.7rem;">
-                                <span fxFlex="70%" fxLayoutAlign="start center">Canal: {{liveEnd.channelName}}</span>
+                                <span fxFlex="70%" fxLayoutAlign="start center">Canal: {{liveFin.channelName}}</span>
                                 <span fxFlex></span>
                                 <span fxFlex="25%" fxLayoutAlign="end center">
 
                                   <!-- <button mat-mini-fab color="accent" aria-label="" (click)="addLive()"><mat-icon>plus_one</mat-icon></button>                                    -->
-                                  <a routerLink="#" (click)="getLivePorId(liveEnd)" class="edit">
+                                  <a routerLink="#" (click)="getLivePorId(liveFin)" class="edit">
                                     <i class="material-icons">
                                         edit
                                     </i>
@@ -172,7 +172,7 @@
                     <mat-card-content fxLayoutAlign="center center">
                         <div>
 
-                            <iframe width="430" height="230" [src]="liveEnd.urlSafe" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe width="430" height="230" [src]="liveFin.urlSafe" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             <!-- <iframe width="325" height="174" [src]="live.urlSafe" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
 
                         </div>
@@ -183,6 +183,72 @@
             </ng-container>
         </div>
     </mat-tab>
+
+
+
+
+
+
+    <mat-tab id=especiais>
+        <ng-template mat-tab-label>
+            <mat-icon style="margin-left: 10px;">done</mat-icon>
+            <span style="margin-left: 10px;">ESPECIAIS</span>
+        </ng-template>
+        <mat-progress-bar *ngIf="!especiais" mode="indeterminate"></mat-progress-bar>
+        <div *ngIf="especiais" fxLayout="row wrap" fxLayoutAlign="start start" style="padding: 2%;">
+            <ng-container *ngFor="let liveEsp of livesEspeciais" style="margin: 0.5%;">
+
+                <mat-card class="mat-elevation-z5 mat-card-live" fxFlex="0 1 calc(33.3% - 11px;)" fxFlex.lt-md="0 1 calc(50% - 11px;)" fxFlex.lt-sm="100%;">
+                    <!-- <mat-card class="mat-elevation-z5 mat-card-live" fxFlex="0 1 calc(25% - 11px;)" fxFlex.lt-md="0 1 calc(50% - 11px;)" fxFlex.lt-sm="100%;"> -->
+
+                    <mat-card-title class="mat-card-title-live">
+                        <div class="row">
+                            <p>
+                                <span style="font-size: 0.9rem;" fxFlex="70%" fxLayoutAlign="start center">
+                              {{liveEsp.liveName.substring(0,35)}}...
+                            </span>
+                                <span fxFlex></span>
+                                <mat-chip class="mat-chip-date" fxFlex="25%" fxLayoutAlign="center center">
+                                    <span style="font-size: 0.7rem;">{{liveEsp.liveDate | localDateTime}}</span>
+                                </mat-chip>
+                            </p>
+                            <p style="font-size: 0.7rem;">
+                                <span fxFlex="70%" fxLayoutAlign="start center">Canal: {{liveEsp.channelName}}</span>
+                                <span fxFlex></span>
+                                <span fxFlex="25%" fxLayoutAlign="end center">
+
+                                <!-- <button mat-mini-fab color="accent" aria-label="" (click)="addLive()"><mat-icon>plus_one</mat-icon></button>                                    -->
+                                <a routerLink="#" (click)="getLivePorId(liveEsp)" class="edit">
+                                  <i class="material-icons">
+                                      edit
+                                  </i>
+                              </a>
+                              <a routerLink="" (click)="openLiveForDelete()" class="delete">
+                                  <i class="material-icons">
+                                      delete
+                                  </i>
+                              </a>
+
+                            </span>
+                            </p>
+                        </div>
+                    </mat-card-title>
+
+                    <mat-card-content fxLayoutAlign="center center">
+                        <div>
+
+                            <iframe width="430" height="230" [src]="liveEsp.urlSafe" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <!-- <iframe width="325" height="174" [src]="live.urlSafe" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+
+
+            </ng-container>
+        </div>
+    </mat-tab>
+
 
 
 

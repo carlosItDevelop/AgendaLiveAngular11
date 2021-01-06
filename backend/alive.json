@@ -103,10 +103,10 @@
       "id": "12",
       "liveName": "Design Patterns: Implementando o Padrão Unit of Work",
       "channelName": "Canal dotNET",
-      "liveDate": "2020-11-03T19:20:00",
       "liveLink": "https://www.youtube.com/embed/DZZSmllmydc",
+      "liveDate": "2020-11-03T20:00:00",
       "liveTime": "20:00",
-      "statusLive": "assistir"
+      "statusLive": "especiais"
     },
     {
       "id": "13",
@@ -242,6 +242,33 @@
       "liveTime": "21:07",
       "statusLive": "assistir",
       "id": "27"
+    },
+    {
+      "id": "28",
+      "liveName": "Curso Angular 8: Lazy Loading e Modules - #06",
+      "channelName": " Escola Front-end",
+      "liveLink": "https://www.youtube.com/embed/8JxN-gYdZgk",
+      "liveDate": "2021-01-06T13:49:00",
+      "liveTime": "13:49",
+      "statusLive": "especiais"
+    },
+    {
+      "id": "29",
+      "liveName": "Curso Angular #60: Rotas Filhas",
+      "channelName": "Loiane Groner",
+      "liveLink": "https://www.youtube.com/embed/zOxKiW7hkzY",
+      "liveDate": "2021-01-06T04:42:00",
+      "liveTime": "04:42",
+      "statusLive": "especiais"
+    },
+    {
+      "liveName": "Lazy Loading",
+      "channelName": "Michelli Brito",
+      "liveLink": "https://www.youtube.com/embed/faYv4aIGoAE",
+      "liveDate": "2021-01-06T09:06",
+      "liveTime": "09:06",
+      "statusLive": "especiais",
+      "id": "nD87--n"
     }
   ],
   "statusDaLive": [
@@ -256,6 +283,10 @@
     {
       "id": "3",
       "statusLive": "assistida"
+    },
+    {
+      "id": "4",
+      "statusLive": "especiais"
     }
   ]
 }

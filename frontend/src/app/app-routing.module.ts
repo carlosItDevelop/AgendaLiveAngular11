@@ -11,16 +11,16 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
+    path: 'lives/table',
+    component: LiveTableComponent
+  },
+  {
     path: 'lives/update/:id',
     component: LiveUpdateComponent
   },
   {
     path: 'lives/delete/:id',
     component: LiveDeleteComponent
-  },
-  {
-    path: 'lives/table',
-    component: LiveTableComponent
   }
 ];
 

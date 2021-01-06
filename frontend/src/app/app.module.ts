@@ -38,8 +38,8 @@ import { LiveAddComponent } from './components/live-add/live-add.component';
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,    
-    LocalDateTimePipe,    
+    HomeComponent,
+    LocalDateTimePipe,
     LiveUpdateComponent,
     LiveDeleteComponent,
     LiveTableComponent,
@@ -76,12 +76,11 @@ import { LiveAddComponent } from './components/live-add/live-add.component';
       provide: MatDialogRef,
       useValue: {}
     },
-    { 
-      provide: MAT_DIALOG_DATA, 
-      useValue: {} 
-    }    
+    {
+      provide: MAT_DIALOG_DATA,
+      useValue: {}
+    }
   ],
-  bootstrap: [AppComponent],
-  entryComponents: [LiveUpdateComponent, LiveAddComponent] // Retirar depois, pois está depreciado (não é mais necessário!)
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

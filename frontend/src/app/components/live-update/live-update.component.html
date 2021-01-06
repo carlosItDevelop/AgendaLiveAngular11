@@ -62,19 +62,14 @@
             </div>
         </div>
 
-        <div>
-            <p>
-                Formulário: {{liveFormUpdate.valid ? "[VÁLIDO]" : "[INVÁLIDO]"}} - {{liveFormUpdate.touched ? "[TOCADO]" : "[VIRGEM]"}} - {{liveFormUpdate.dirty ? "[SUJO]" : "[LIMPO]"}}
-            </p>
-        </div>
-
         <div class="row">
             <div class="col-md-12">
                 <div class="card bg-secondary" [ngClass]="{ 'bg-info' : liveFormUpdate.valid }">
                     <div class="card-body">
                         <pre>Value: <code>{{ liveFormUpdate.value | json }}</code></pre>
                         <p>
-                            Status: {{ liveFormUpdate.status }}
+                            Formulário: {{liveFormUpdate.valid ? "[VÁLIDO]" : "[INVÁLIDO]"}} - {{liveFormUpdate.touched ? "[TOCADO]" : "[VIRGEM]"}} - {{liveFormUpdate.dirty ? "[SUJO]" : "[LIMPO]"}}
+                            <!-- Status: {{ liveFormUpdate.status }} -->
                         </p>
                         <p>
                             Errors: {{ liveFormUpdate.errors | json }}

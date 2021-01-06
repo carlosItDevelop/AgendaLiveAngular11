@@ -16,10 +16,12 @@ export class LiveListComponent implements OnInit {
   livesAssistir: Live[]|any;
   livesAssistida: Live[]|any;
   livesAssistindo: Live[]|any;
+  livesEspeciais: Live[]|any;
 
   assistir: boolean = false;
   assistindo: boolean = false;
   assistida: boolean = false;
+  especiais: boolean = false;
 
   constructor(
     private liveService: LiveService,
@@ -33,6 +35,7 @@ export class LiveListComponent implements OnInit {
     this.obterLivesAssistir();
     this.obterLivesAssistindo();
     this.obterLivesAssistida();
+    this.obterLivesEspeciais();
   }
 
 
@@ -71,6 +74,20 @@ export class LiveListComponent implements OnInit {
       });
 
       this.assistida = true;
+
+    });
+  }
+
+
+  obterLivesEspeciais(): void {
+    this.liveService.obterLivesPaginadas('especiais', '1', '24').subscribe(dados => {
+      this.livesEspeciais = dados;
+
+      this.livesEspeciais.forEach((live: { urlSafe: SafeResourceUrl; liveLink: string; }) => {
+        live.urlSafe = this.sanitizer.bypassSecurityTrustResourceUrl(live.liveLink);
+      });
+
+      this.especiais = true;
 
     });
   }
