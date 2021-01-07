@@ -269,6 +269,33 @@
       "liveTime": "09:06",
       "statusLive": "especiais",
       "id": "nD87--n"
+    },
+    {
+      "liveName": "[Youtube Live] Angular: Organização dos Módulos, VSCode e boas práticas",
+      "channelName": "GDG Salvador",
+      "liveLink": "https://www.youtube.com/embed/u2JS49mtNQ4",
+      "liveDate": "2017-02-15T23:08",
+      "liveTime": "23:08",
+      "statusLive": "especiais",
+      "id": "aV_D-n8"
+    },
+    {
+      "liveName": "Angular Propriedades dos Componentes #05",
+      "channelName": "hcode",
+      "liveLink": "https://www.youtube.com/embed/x1PsqSbWUoo",
+      "liveDate": "2019-10-02T20:53",
+      "liveTime": "20:53",
+      "statusLive": "especiais",
+      "id": "NF-SQqk"
+    },
+    {
+      "liveName": "Curso Frontend com Angular #Aula 9 - Lazy-loading - Carregamento tardio de módulos",
+      "channelName": " Wilson Godoi",
+      "liveLink": "https://www.youtube.com/embed/4U9L4nXLywY",
+      "liveDate": "2020-08-26T12:55",
+      "liveTime": "12:55",
+      "statusLive": "especiais",
+      "id": "33vmkqz"
     }
   ],
   "statusDaLive": [

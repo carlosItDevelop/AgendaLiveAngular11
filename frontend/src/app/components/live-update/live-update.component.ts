@@ -46,8 +46,13 @@ export class LiveUpdateComponent implements OnInit {
       channelName: ['', [Validators.required, Validators.minLength(3)]],
 
       liveLink: ['', [Validators.required, Validators.minLength(5)]],
-      liveDate: ['', Validators.required],
-      liveTime: ['', Validators.required],
+
+      liveDate: ['', [
+        Validators.required
+         ]
+      ],
+
+      liveTime: ['', [Validators.required]],
       statusLive: ['', [Validators.required, Validators.minLength(3)]]
     });
 

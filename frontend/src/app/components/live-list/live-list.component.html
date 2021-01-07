@@ -10,27 +10,23 @@
             <ng-container *ngFor="let liveIni of livesAssistir" style="margin: 0.5%;">
 
                 <mat-card class="mat-elevation-z5 mat-card-live" fxFlex="0 1 calc(33.3% - 11px;)" fxFlex.lt-md="0 1 calc(50% - 11px;)" fxFlex.lt-sm="100%;">
-                    <!-- <mat-card class="mat-elevation-z5 mat-card-live" fxFlex="0 1 calc(25% - 11px;)" fxFlex.lt-md="0 1 calc(50% - 11px;)" fxFlex.lt-sm="100%;"> -->
 
                     <mat-card-title class="mat-card-title-live">
                         <div class="row">
                             <p>
-                                <span style="font-size: 0.9rem;" fxFlex="70%" fxLayoutAlign="start center">
-                                  {{liveIni.liveName.substring(0,35)}}...
+                                <span style="font-size: 0.9rem; text-align: left; margin-left: 15px; max-width: 70%; margin-right: 10px;">
+                                  {{liveIni.liveName.substring(0,40)}}...
                                 </span>
-                                <span fxFlex></span>
-                                <mat-chip class="mat-chip-date" fxFlex="25%" fxLayoutAlign="center center">
-                                    <span style="font-size: 0.7rem;">{{liveIni.liveDate | localDateTime}}</span>
+                                <!-- <span fxFlex></span> -->
+                                <mat-chip class="mat-chip-date" style="text-align: right; float: right; ">
+                                    <span style="font-size: 0.7rem; text-align: right; margin-right: 10px; ">{{liveIni.liveDate | localDateTime}}</span>
                                 </mat-chip>
                             </p>
                             <p style="font-size: 0.7rem;">
-                                <span fxFlex="70%" fxLayoutAlign="start center">Canal: {{liveIni.channelName}}</span>
+                                <span fxFlex="70%" style="text-align: left; margin-left: 15px;">Canal: {{liveIni.channelName}}</span>
                                 <span fxFlex></span>
-                                <span fxFlex="25%" fxLayoutAlign="end center">
-
-                                  <!-- <button mat-mini-fab color="accent" aria-label="" (click)="getLiveForUpdate(live)"><mat-icon>plus_one</mat-icon></button> -->
+                                <span fxFlex="25%" style="text-align: right; margin-right: 10px; max-width: 25%; display: block;">
                                   <a class="edit">
-                                    <!-- <i class="material-icons" (click)="getLiveForUpdate(live)"> -->
                                       <i class="material-icons" (click)="getLivePorId(liveIni)">
                                         edit
                                     </i>
