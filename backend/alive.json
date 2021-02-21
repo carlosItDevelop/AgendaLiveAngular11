@@ -296,6 +296,42 @@
       "liveTime": "12:55",
       "statusLive": "especiais",
       "id": "33vmkqz"
+    },
+    {
+      "liveName": "Fala ARQ com Giovanni Bassi | Arquitetura de Software e Agilidade",
+      "channelName": " Pisani da ArcH",
+      "liveLink": "https://www.youtube.com/embed/5YZRey98Hns",
+      "liveDate": "2021-01-20T03:39",
+      "liveTime": "03:39",
+      "statusLive": "especiais",
+      "id": "HqhT6Vd"
+    },
+    {
+      "liveName": "ENTREVISTA COM GIOVANNI BASSI",
+      "channelName": "Vanny Moura",
+      "liveLink": "https://www.youtube.com/embed/rJxSzi54Tvw",
+      "liveDate": "2021-01-20T06:55",
+      "liveTime": "06:55",
+      "statusLive": "especiais",
+      "id": "auE3-8m"
+    },
+    {
+      "liveName": "O padrão MAIS UTILIZADO DO MUNDO",
+      "channelName": "Cod3r Cursos",
+      "liveLink": "https://www.youtube.com/embed/CR8iAWLZuUc",
+      "liveDate": "2021-02-21T09:38",
+      "liveTime": "09:38",
+      "statusLive": "especiais",
+      "id": "OkPmyut"
+    },
+    {
+      "liveName": "Frameworks Front-end: uma visão arquitetural",
+      "channelName": "Cod3r Cursos",
+      "liveLink": "https://www.youtube.com/embed/Cev1okbtKOM",
+      "liveDate": "2021-02-21T09:47",
+      "liveTime": "09:47",
+      "statusLive": "especiais",
+      "id": "l8J98du"
     }
   ],
   "statusDaLive": [
