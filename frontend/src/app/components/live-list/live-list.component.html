@@ -69,37 +69,34 @@
             <ng-container *ngFor="let liveAstnd of livesAssistindo" style="margin: 0.5%;">
 
                 <mat-card class="mat-elevation-z5 mat-card-live" fxFlex="0 1 calc(33.3% - 11px;)" fxFlex.lt-md="0 1 calc(50% - 11px;)" fxFlex.lt-sm="100%;">
-                    <!-- <mat-card class="mat-elevation-z5 mat-card-live" fxFlex="0 1 calc(25% - 11px;)" fxFlex.lt-md="0 1 calc(50% - 11px;)" fxFlex.lt-sm="100%;"> -->
 
                     <mat-card-title class="mat-card-title-live">
                         <div class="row">
                             <p>
-                                <span style="font-size: 0.9rem;" fxFlex="70%" fxLayoutAlign="start center">
-                                  {{liveAstnd.liveName.substring(0,35)}}...
-                                </span>
-                                <span fxFlex></span>
-                                <mat-chip class="mat-chip-date" fxFlex="25%" fxLayoutAlign="center center">
-                                    <span style="font-size: 0.7rem;">{{liveAstnd.liveDate | localDateTime}}</span>
+                                <span style="font-size: 0.9rem; text-align: left; margin-left: 15px; max-width: 70%; margin-right: 10px;">
+                              {{liveAstnd.liveName.substring(0,40)}}...
+                            </span>
+                                <!-- <span fxFlex></span> -->
+                                <mat-chip class="mat-chip-date" style="text-align: right; float: right; ">
+                                    <span style="font-size: 0.7rem; text-align: right; margin-right: 10px; ">{{liveAstnd.liveDate | localDateTime}}</span>
                                 </mat-chip>
                             </p>
                             <p style="font-size: 0.7rem;">
-                                <span fxFlex="70%" fxLayoutAlign="start center">Canal: {{liveAstnd.channelName}}</span>
+                                <span fxFlex="70%" style="text-align: left; margin-left: 15px;">Canal: {{liveAstnd.channelName}}</span>
                                 <span fxFlex></span>
-                                <span fxFlex="25%" fxLayoutAlign="end center">
+                                <span fxFlex="25%" style="text-align: right; margin-right: 10px; max-width: 25%; display: block;">
+                                  <a class="edit">
+                                    <i class="material-icons" (click)="getLivePorId(liveAstnd)">
+                                      edit
+                                  </i>
+                              </a>
+                            <a class="delete">
+                                <i class="material-icons" (click)="openLiveForDelete()">
+                                    delete
+                                </i>
+                            </a>
 
-                                  <!-- <button mat-mini-fab color="accent" aria-label="" (click)="addLive()"><mat-icon>plus_one</mat-icon></button>                                    -->
-                                  <a routerLink="" (click)="getLivePorId(liveAstnd)" class="edit">
-                                    <i class="material-icons">
-                                        edit
-                                    </i>
-                                </a>
-                                <a routerLink="" (click)="openLiveForDelete()" class="delete">
-                                    <i class="material-icons">
-                                        delete
-                                    </i>
-                                </a>
-
-                              </span>
+                            </span>
                             </p>
                         </div>
                     </mat-card-title>
@@ -108,7 +105,6 @@
                         <div>
 
                             <iframe width="430" height="230" [src]="liveAstnd.urlSafe" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            <!-- <iframe width="325" height="174" [src]="live.urlSafe" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
 
                         </div>
                     </mat-card-content>
@@ -130,37 +126,34 @@
             <ng-container *ngFor="let liveFin of livesAssistida" style="margin: 0.5%;">
 
                 <mat-card class="mat-elevation-z5 mat-card-live" fxFlex="0 1 calc(33.3% - 11px;)" fxFlex.lt-md="0 1 calc(50% - 11px;)" fxFlex.lt-sm="100%;">
-                    <!-- <mat-card class="mat-elevation-z5 mat-card-live" fxFlex="0 1 calc(25% - 11px;)" fxFlex.lt-md="0 1 calc(50% - 11px;)" fxFlex.lt-sm="100%;"> -->
 
                     <mat-card-title class="mat-card-title-live">
                         <div class="row">
                             <p>
-                                <span style="font-size: 0.9rem;" fxFlex="70%" fxLayoutAlign="start center">
-                                {{liveFin.liveName.substring(0,35)}}...
-                              </span>
-                                <span fxFlex></span>
-                                <mat-chip class="mat-chip-date" fxFlex="25%" fxLayoutAlign="center center">
-                                    <span style="font-size: 0.7rem;">{{liveFin.liveDate | localDateTime}}</span>
+                                <span style="font-size: 0.9rem; text-align: left; margin-left: 15px; max-width: 70%; margin-right: 10px;">
+                          {{liveFin.liveName.substring(0,40)}}...
+                        </span>
+                                <!-- <span fxFlex></span> -->
+                                <mat-chip class="mat-chip-date" style="text-align: right; float: right; ">
+                                    <span style="font-size: 0.7rem; text-align: right; margin-right: 10px; ">{{liveFin.liveDate | localDateTime}}</span>
                                 </mat-chip>
                             </p>
                             <p style="font-size: 0.7rem;">
-                                <span fxFlex="70%" fxLayoutAlign="start center">Canal: {{liveFin.channelName}}</span>
+                                <span fxFlex="70%" style="text-align: left; margin-left: 15px;">Canal: {{liveFin.channelName}}</span>
                                 <span fxFlex></span>
-                                <span fxFlex="25%" fxLayoutAlign="end center">
+                                <span fxFlex="25%" style="text-align: right; margin-right: 10px; max-width: 25%; display: block;">
+                              <a class="edit">
+                                <i class="material-icons" (click)="getLivePorId(liveFin)">
+                                  edit
+                              </i>
+                          </a>
+                        <a class="delete">
+                            <i class="material-icons" (click)="openLiveForDelete()">
+                                delete
+                            </i>
+                        </a>
 
-                                  <!-- <button mat-mini-fab color="accent" aria-label="" (click)="addLive()"><mat-icon>plus_one</mat-icon></button>                                    -->
-                                  <a routerLink="#" (click)="getLivePorId(liveFin)" class="edit">
-                                    <i class="material-icons">
-                                        edit
-                                    </i>
-                                </a>
-                                <a routerLink="" (click)="openLiveForDelete()" class="delete">
-                                    <i class="material-icons">
-                                        delete
-                                    </i>
-                                </a>
-
-                              </span>
+                        </span>
                             </p>
                         </div>
                     </mat-card-title>
@@ -169,12 +162,10 @@
                         <div>
 
                             <iframe width="430" height="230" [src]="liveFin.urlSafe" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            <!-- <iframe width="325" height="174" [src]="live.urlSafe" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
 
                         </div>
                     </mat-card-content>
                 </mat-card>
-
 
             </ng-container>
         </div>
@@ -195,37 +186,34 @@
             <ng-container *ngFor="let liveEsp of livesEspeciais" style="margin: 0.5%;">
 
                 <mat-card class="mat-elevation-z5 mat-card-live" fxFlex="0 1 calc(33.3% - 11px;)" fxFlex.lt-md="0 1 calc(50% - 11px;)" fxFlex.lt-sm="100%;">
-                    <!-- <mat-card class="mat-elevation-z5 mat-card-live" fxFlex="0 1 calc(25% - 11px;)" fxFlex.lt-md="0 1 calc(50% - 11px;)" fxFlex.lt-sm="100%;"> -->
 
                     <mat-card-title class="mat-card-title-live">
                         <div class="row">
                             <p>
-                                <span style="font-size: 0.9rem;" fxFlex="70%" fxLayoutAlign="start center">
-                              {{liveEsp.liveName.substring(0,35)}}...
-                            </span>
-                                <span fxFlex></span>
-                                <mat-chip class="mat-chip-date" fxFlex="25%" fxLayoutAlign="center center">
-                                    <span style="font-size: 0.7rem;">{{liveEsp.liveDate | localDateTime}}</span>
+                                <span style="font-size: 0.9rem; text-align: left; margin-left: 15px; max-width: 70%; margin-right: 10px;">
+                          {{liveEsp.liveName.substring(0,40)}}...
+                        </span>
+                                <!-- <span fxFlex></span> -->
+                                <mat-chip class="mat-chip-date" style="text-align: right; float: right; ">
+                                    <span style="font-size: 0.7rem; text-align: right; margin-right: 10px; ">{{liveEsp.liveDate | localDateTime}}</span>
                                 </mat-chip>
                             </p>
                             <p style="font-size: 0.7rem;">
-                                <span fxFlex="70%" fxLayoutAlign="start center">Canal: {{liveEsp.channelName}}</span>
+                                <span fxFlex="70%" style="text-align: left; margin-left: 15px;">Canal: {{liveEsp.channelName}}</span>
                                 <span fxFlex></span>
-                                <span fxFlex="25%" fxLayoutAlign="end center">
+                                <span fxFlex="25%" style="text-align: right; margin-right: 10px; max-width: 25%; display: block;">
+                              <a class="edit">
+                                <i class="material-icons" (click)="getLivePorId(liveEsp)">
+                                  edit
+                              </i>
+                          </a>
+                        <a class="delete">
+                            <i class="material-icons" (click)="openLiveForDelete()">
+                                delete
+                            </i>
+                        </a>
 
-                                <!-- <button mat-mini-fab color="accent" aria-label="" (click)="addLive()"><mat-icon>plus_one</mat-icon></button>                                    -->
-                                <a routerLink="#" (click)="getLivePorId(liveEsp)" class="edit">
-                                  <i class="material-icons">
-                                      edit
-                                  </i>
-                              </a>
-                              <a routerLink="" (click)="openLiveForDelete()" class="delete">
-                                  <i class="material-icons">
-                                      delete
-                                  </i>
-                              </a>
-
-                            </span>
+                        </span>
                             </p>
                         </div>
                     </mat-card-title>
@@ -234,7 +222,6 @@
                         <div>
 
                             <iframe width="430" height="230" [src]="liveEsp.urlSafe" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            <!-- <iframe width="325" height="174" [src]="live.urlSafe" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
 
                         </div>
                     </mat-card-content>
